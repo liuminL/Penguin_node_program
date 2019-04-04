@@ -264,14 +264,15 @@ void CAN1_RX0_IRQHandler(void)
 			nodeStatus = 1;
 			memcpy(PWMVAL,RxMessage.Data,8);					//内存拷贝 第二帧只完成前4个舵机的控制指令 即每个8位
 		}
-		else if(msgId == MII_MSG_COMMON_4)        //第四帧：头部舵机
+		else if(msgId == MII_MSG_COMMON_4)        //第四帧：头部舵机               0x4c
 		{
 			nodeStatus = 1;
 			memcpy(&PWMVAL[4], RxMessage.Data, 2);
 		}
-		else if(msgId == MII_MSG_COMMON_5)
+		else if(msgId == MII_MSG_COMMON_5)        //第五帧：电机梯形、加减速度   0x4d
 		{
 			nodeStatus = 1;
+			
 		}
 		else
 		{

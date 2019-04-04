@@ -223,6 +223,256 @@ unsigned char CAN_BLDC_state_get(unsigned char Number)
 		CAN_BLDC_Delay_Us(10);
 		return return_state;
 }
+/*******************************************************************************
+* Function Name  : CAN_BLDC
+* Description    : Driver communication
+* Number         : Driver number 
+* RW             : 0 is Read, 1 is Write
+* obj            : obj code   lenth is 24, see the doc of driver
+* setValue       : max 32
+* returnDate     : when is reading
+*******************************************************************************/		
+void CAN_BLDC(unsigned char Number, int RW, long obj, long setValue, char* returnDate)
+{
+		CanTxMsg tx_message;
+		unsigned short can_id = 0x600;
+    
+    tx_message.IDE = CAN_ID_STD;    //标准帧
+    tx_message.RTR = CAN_RTR_DATA;  //数据帧
+    tx_message.DLC = 0x08;          //帧长度为8
+    
+		//4 BLDC
+    if(Number<5 && Number>0)
+    {
+        can_id |= Number;
+    }
+    else
+    {
+        return;
+    }
+		tx_message.StdId = can_id;                                                     //帧ID为传入参数的CAN_ID
+		
+		if(RW == 0)                             //read
+		{
+			tx_message.Data[0] = 0x40;
+		}
+		else if(RW == 1)                        //write
+		{
+			tx_message.Data[0] = 0x23;
+		}
+		else
+			return;
+		
+    tx_message.Data[1] = (unsigned char)((obj>>8)&0xff);          //取obj9-16位
+    tx_message.Data[2] = (unsigned char)((obj>>16)&0xff);         //17-24
+    tx_message.Data[3] = (unsigned char)(obj&0xff);     					//1-8
+    tx_message.Data[4] = (unsigned char)(setValue&0xff);        	//1-8
+    tx_message.Data[5] = (unsigned char)((setValue>>8)&0xff);   	//9-16
+    tx_message.Data[6] = (unsigned char)((setValue>>16)&0xff);  	//17-24
+    tx_message.Data[7] = (unsigned char)((setValue>>24)&0xff);  	//25-32
+		
+		can_tx_success_flag2 = 0;
+    CAN_Transmit(CAN2,&tx_message);
+    
+		CAN_Time_Out2 = 0;
+    while(can_tx_success_flag2 == 0)
+    {
+				CAN_BLDC_Delay_Us(1);
+        CAN_Time_Out2++;
+        if(CAN_Time_Out2>100)
+        {
+						break;
+        }
+    }
+}
+/*
+驱动器加速度设置
+*/
+void CAN_BLDC_accelerationSet(unsigned char Number, long acceleration)
+{
+		CanTxMsg tx_message;
+		unsigned short can_id = 0x600;
+    
+    tx_message.IDE = CAN_ID_STD;    //标准帧
+    tx_message.RTR = CAN_RTR_DATA;  //数据帧
+    tx_message.DLC = 0x08;          //帧长度为8
+    
+		//4 BLDC
+    if(Number<5 && Number>0)
+    {
+        can_id |= Number;
+    }
+    else
+    {
+        return;
+    }
+		tx_message.StdId = can_id;                                                     //帧ID为传入参数的CAN_ID
+		
+		tx_message.Data[0] = 0x23;
+    tx_message.Data[1] = 0xF0;
+    tx_message.Data[2] = 0x2F;
+    tx_message.Data[3] = 0x06;
+    tx_message.Data[4] = (unsigned char)(acceleration&0xff);
+    tx_message.Data[5] = (unsigned char)((acceleration>>8)&0xff);
+    tx_message.Data[6] = (unsigned char)((acceleration>>16)&0xff);
+    tx_message.Data[7] = (unsigned char)((acceleration>>24)&0xff);
+		
+		can_tx_success_flag2 = 0;
+    CAN_Transmit(CAN2,&tx_message);
+    
+		CAN_Time_Out2 = 0;
+    while(can_tx_success_flag2 == 0)
+    {
+				CAN_BLDC_Delay_Us(1);
+        CAN_Time_Out2++;
+        if(CAN_Time_Out2>100)
+        {
+						break;
+        }
+    }
+}
+/*
+驱动器减速度设置
+*/
+void CAN_BLDC_decelerationSet(unsigned char Number, long deceleration)
+{
+		CanTxMsg tx_message;
+		unsigned short can_id = 0x600;
+    
+    tx_message.IDE = CAN_ID_STD;    //标准帧
+    tx_message.RTR = CAN_RTR_DATA;  //数据帧
+    tx_message.DLC = 0x08;          //帧长度为8
+    
+		//4 BLDC
+    if(Number<5 && Number>0)
+    {
+        can_id |= Number;
+    }
+    else
+    {
+        return;
+    }
+		tx_message.StdId = can_id;                                                     //帧ID为传入参数的CAN_ID
+		
+		tx_message.Data[0] = 0x23;
+    tx_message.Data[1] = 0xF0;
+    tx_message.Data[2] = 0x2F;
+    tx_message.Data[3] = 0x07;
+    tx_message.Data[4] = (unsigned char)(deceleration&0xff);
+    tx_message.Data[5] = (unsigned char)((deceleration>>8)&0xff);
+    tx_message.Data[6] = (unsigned char)((deceleration>>16)&0xff);
+    tx_message.Data[7] = (unsigned char)((deceleration>>24)&0xff);
+		
+		can_tx_success_flag2 = 0;
+    CAN_Transmit(CAN2,&tx_message);
+    
+		CAN_Time_Out2 = 0;
+    while(can_tx_success_flag2 == 0)
+    {
+				CAN_BLDC_Delay_Us(1);
+        CAN_Time_Out2++;
+        if(CAN_Time_Out2>100)
+        {
+						break;
+        }
+    }
+}
+/*
+梯形速度rpm设置
+*/
+void CAN_BLDC_Trapezoidal_speed(unsigned char Number, long speed)
+{
+		CanTxMsg tx_message;
+		unsigned short can_id = 0x600;
+    
+    tx_message.IDE = CAN_ID_STD;    //标准帧
+    tx_message.RTR = CAN_RTR_DATA;  //数据帧
+    tx_message.DLC = 0x08;          //帧长度为8
+    
+		//4 BLDC
+    if(Number<5 && Number>0)
+    {
+        can_id |= Number;
+    }
+    else
+    {
+        return;
+    }
+		tx_message.StdId = can_id;                                                     //帧ID为传入参数的CAN_ID
+		
+		tx_message.Data[0] = 0x23;
+    tx_message.Data[1] = 0x82;
+    tx_message.Data[2] = 0x60;
+    tx_message.Data[3] = 0x00;
+    tx_message.Data[4] = (unsigned char)(speed&0xff);
+    tx_message.Data[5] = (unsigned char)((speed>>8)&0xff);
+    tx_message.Data[6] = (unsigned char)((speed>>16)&0xff);
+    tx_message.Data[7] = (unsigned char)((speed>>24)&0xff);
+		
+		can_tx_success_flag2 = 0;
+    CAN_Transmit(CAN2,&tx_message);
+    
+		CAN_Time_Out2 = 0;
+    while(can_tx_success_flag2 == 0)
+    {
+				CAN_BLDC_Delay_Us(1);
+        CAN_Time_Out2++;
+        if(CAN_Time_Out2>100)
+        {
+						break;
+        }
+    }
+}
+
+/*
+急停
+*/
+void CAN_BLDC_Stop(unsigned char Number, long flag)
+{
+		CanTxMsg tx_message;
+		unsigned short can_id = 0x600;
+    
+    tx_message.IDE = CAN_ID_STD;    //标准帧
+    tx_message.RTR = CAN_RTR_DATA;  //数据帧
+    tx_message.DLC = 0x08;          //帧长度为8
+    
+		//4 BLDC
+    if(Number<5 && Number>0)
+    {
+        can_id |= Number;
+    }
+    else
+    {
+        return;
+    }
+		tx_message.StdId = can_id;                                                     //帧ID为传入参数的CAN_ID
+		
+		tx_message.Data[0] = 0x23;
+    tx_message.Data[1] = 0x82;
+    tx_message.Data[2] = 0x60;
+    tx_message.Data[3] = 0x00;
+    tx_message.Data[4] = (unsigned char)(flag&0xff);
+    tx_message.Data[5] = (unsigned char)((flag>>8)&0xff);
+    tx_message.Data[6] = (unsigned char)((flag>>16)&0xff);
+    tx_message.Data[7] = (unsigned char)((flag>>24)&0xff);
+		
+		can_tx_success_flag2 = 0;
+    CAN_Transmit(CAN2,&tx_message);
+    
+		CAN_Time_Out2 = 0;
+    while(can_tx_success_flag2 == 0)
+    {
+				CAN_BLDC_Delay_Us(1);
+        CAN_Time_Out2++;
+        if(CAN_Time_Out2>100)
+        {
+						break;
+        }
+    }
+}
+/*
+绝对位置模式下的控制
+*/
 void CAN_BLDC_AbPositionMod(unsigned char Number, long Temp_Position)
 {
 		CanTxMsg tx_message;
@@ -268,7 +518,9 @@ void CAN_BLDC_AbPositionMod(unsigned char Number, long Temp_Position)
         }
     }
 }
-
+/*
+相对位置下的控制
+*/
 void CAN_BLDC_RePositionMod(unsigned char Number, long Temp_Position)
 {
 		CanTxMsg tx_message;

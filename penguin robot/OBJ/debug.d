@@ -3,7 +3,7 @@
 ..\obj\debug.o: ..\SYSTEM\sys\sys.h
 ..\obj\debug.o: ..\Project\stm32f10x.h
 ..\obj\debug.o: ..\CORE\core_cm3.h
-..\obj\debug.o: f:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\debug.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\debug.o: ..\Project\system_stm32f10x.h
 ..\obj\debug.o: ..\Project\stm32f10x_conf.h
 ..\obj\debug.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h
@@ -36,11 +36,11 @@
 ..\obj\debug.o: ..\HARDWAVE\CAN\can.h
 ..\obj\debug.o: ..\Project\user.h
 ..\obj\debug.o: ..\SYSTEM\usart\usart.h
-..\obj\debug.o: f:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\debug.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\debug.o: ..\UCOSIII\UCOS_CONFIG\includes.h
-..\obj\debug.o: f:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
-..\obj\debug.o: f:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-..\obj\debug.o: f:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+..\obj\debug.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+..\obj\debug.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\debug.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 ..\obj\debug.o: ..\UCOSIII\uC-CPU\ARM-Cortex-M3\RealView\cpu.h
 ..\obj\debug.o: ..\UCOSIII\uC-CPU\cpu_def.h
 ..\obj\debug.o: ..\UCOSIII\UCOS_CONFIG\cpu_cfg.h

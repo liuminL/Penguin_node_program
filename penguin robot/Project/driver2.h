@@ -23,8 +23,13 @@ char get_CAN_BLDC_MOTOR_STATE(unsigned char Number);
 void set_CAN_BLDC_MOTOR_STATE(unsigned char Number, char state);
 
 static void CAN_BLDC_Delay_Us(unsigned int t);
+void CAN_BLDC(unsigned char Number, int RW, long obj, long setValue, char* returnDate);
 void CAN_BLDC_ResetMod(unsigned char Number, unsigned char Mode);
 void CAN_BLDC_Control(unsigned char Number, unsigned char ControlWord);
+void CAN_BLDC_accelerationSet(unsigned char Number, long acceleration);
+void CAN_BLDC_decelerationSet(unsigned char Number, long deceleration);
+void CAN_BLDC_Trapezoidal_speed(unsigned char Number, long speed);
+void CAN_BLDC_Stop(unsigned char Number, long flag);
 void CAN_BLDC_AbPositionMod(unsigned char Number, long Temp_Position);
 void CAN_BLDC_RePositionMod(unsigned char Number, long Temp_Position);
 

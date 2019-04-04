@@ -3,7 +3,7 @@
 ..\obj\driver2.o: ..\SYSTEM\sys\sys.h
 ..\obj\driver2.o: ..\Project\stm32f10x.h
 ..\obj\driver2.o: ..\CORE\core_cm3.h
-..\obj\driver2.o: f:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\driver2.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\driver2.o: ..\Project\system_stm32f10x.h
 ..\obj\driver2.o: ..\Project\stm32f10x_conf.h
 ..\obj\driver2.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h
@@ -36,11 +36,11 @@
 ..\obj\driver2.o: ..\HARDWAVE\CAN\can.h
 ..\obj\driver2.o: ..\Project\user.h
 ..\obj\driver2.o: ..\SYSTEM\usart\usart.h
-..\obj\driver2.o: f:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\driver2.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\driver2.o: ..\UCOSIII\UCOS_CONFIG\includes.h
-..\obj\driver2.o: f:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
-..\obj\driver2.o: f:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-..\obj\driver2.o: f:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+..\obj\driver2.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+..\obj\driver2.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\driver2.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 ..\obj\driver2.o: ..\UCOSIII\uC-CPU\ARM-Cortex-M3\RealView\cpu.h
 ..\obj\driver2.o: ..\UCOSIII\uC-CPU\cpu_def.h
 ..\obj\driver2.o: ..\UCOSIII\UCOS_CONFIG\cpu_cfg.h

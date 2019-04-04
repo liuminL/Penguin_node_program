@@ -271,9 +271,23 @@ void CAN1_RX0_IRQHandler(void)
 		}
 		else if(msgId == MII_MSG_COMMON_5)        //第五帧：电机梯形、加减速度   0x4d
 		{
+			//Flag_MotorChange = 1;
 			nodeStatus = 1;
-			
+			memcpy(&(LEFT_Knee.motor_acceleration), RxMessage.Data, 2);
+			memcpy(&(LEFT_Knee.motor_deceleration), &RxMessage.Data[2], 2);
+			memcpy(&(LEFT_Hip.motor_acceleration), &RxMessage.Data[4], 2);
+			memcpy(&(LEFT_Hip.motor_deceleration), &RxMessage.Data[6], 2);
 		}
+		else if(msgId == MII_MSG_COMMON_6)        //第五帧：电机梯形、加减速度   0x4E
+		{
+			//Flag_MotorChange = 1;
+			nodeStatus = 1;
+			memcpy(&(RIGHT_Knee.motor_acceleration), RxMessage.Data, 2);
+			memcpy(&(RIGHT_Knee.motor_deceleration), &RxMessage.Data[2], 2);
+			memcpy(&(RIGHT_Hip.motor_acceleration), &RxMessage.Data[4], 2);
+			memcpy(&(RIGHT_Hip.motor_deceleration), &RxMessage.Data[6], 2);
+		}
+		
 		else
 		{
 			nodeStatus = 0;
@@ -452,11 +466,12 @@ void can2_task(void *p_arg)
 	{
 		if(Flag_MotorChange == 1)
 		{
-			CAN_BLDC_RePositionMod(2, LEFT_Knee.motor_position);
+			CAN_BLDC_RePositionMod(2, LEFT_Knee.motor_position, LEFT_Knee.motor_acceleration, LEFT_Knee.motor_deceleration);
 			
-			CAN_BLDC_RePositionMod(1, LEFT_Hip.motor_position);
-			CAN_BLDC_RePositionMod(3, RIGHT_Hip.motor_position);
-			CAN_BLDC_RePositionMod(4, RIGHT_Knee.motor_position);
+			CAN_BLDC_RePositionMod(1, LEFT_Hip.motor_position, LEFT_Hip.motor_acceleration, LEFT_Hip.motor_deceleration);
+			CAN_BLDC_RePositionMod(3, RIGHT_Hip.motor_position, RIGHT_Hip.motor_acceleration, RIGHT_Hip.motor_deceleration);
+			CAN_BLDC_RePositionMod(4, RIGHT_Knee.motor_position, RIGHT_Knee.motor_acceleration, RIGHT_Knee.motor_deceleration);
+			
 			Flag_MotorChange = 0;
 		}
 		OSTimeDlyHMSM(0,0,0,100,OS_OPT_TIME_HMSM_STRICT,&err); //延时,发起任务调度

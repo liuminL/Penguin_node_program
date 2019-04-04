@@ -521,7 +521,7 @@ void CAN_BLDC_AbPositionMod(unsigned char Number, long Temp_Position)
 /*
 相对位置下的控制
 */
-void CAN_BLDC_RePositionMod(unsigned char Number, long Temp_Position)
+void CAN_BLDC_RePositionMod(unsigned char Number, long Temp_Position, long acceleration, long deceleration)
 {
 		CanTxMsg tx_message;
 		unsigned short can_id = 0x600;
@@ -540,6 +540,10 @@ void CAN_BLDC_RePositionMod(unsigned char Number, long Temp_Position)
         return;
     }
 		tx_message.StdId = can_id;      //帧ID为传入参数的CAN_ID
+		
+		CAN_BLDC_accelerationSet(Number, acceleration);
+		CAN_BLDC_decelerationSet(Number, deceleration);
+		
 		if(get_CAN_BLDC_MOTOR_STATE(Number) == 0x0)
 			CAN_BLDC_Control(Number, BLDC_ReControlWord_On);    //Let the motor connect to power
 		
@@ -555,6 +559,7 @@ void CAN_BLDC_RePositionMod(unsigned char Number, long Temp_Position)
 		can_tx_success_flag2 = 0;
     CAN_Transmit(CAN2,&tx_message);
     
+		
     CAN_Time_Out2 = 0;
     while(can_tx_success_flag2 == 0)
     {

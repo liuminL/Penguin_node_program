@@ -59,7 +59,7 @@ I (..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M3\Generic\RealView\os_cpu.h)(0x5CA34E5F
 I (qr_protocol.h)(0x5CA34E5F)
 I (..\HARDWAVE\TIMER\timer.h)(0x5CA34E5F)
 I (..\HARDWAVE\DRIVER\driver.h)(0x5CA34E5F)
-I (driver2.h)(0x5CA5AFBB)
+I (driver2.h)(0x5CA5BB8B)
 I (pwm.h)(0x5CA34E5F)
 F (.\stm32f10x_it.c)(0x5CA34E5F)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\Project -I..\STM32F10x_FWLib\inc -I..\HARDWAVE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\UCOSIII\uC-CPU -I..\UCOSIII\uC-LIB -I..\UCOSIII\uCOS-III -I..\UCOSIII\UCOS_BSP -I..\UCOSIII\UCOS_CONFIG -I..\UCOSIII\uCOS-III\Source -I..\UCOSIII\uC-CPU\ARM-Cortex-M3\RealView -I..\UCOSIII\uC-LIB\Ports\ARM-Cortex-M3\RealView -I..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M3\Generic\RealView -I..\HARDWAVE\ADC -I..\HARDWAVE\CAN -I..\HARDWAVE\TIMER -I..\HARDWAVE\DEBUG -I..\HARDWAVE\DRIVER-I "E:\Laboratory\Penguin project\node program\Penguin_node_program\penguin robot\Project\RTE"-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="514" -DSTM32F10X_CL -DSTM32F10X_CL -DUSE_STDPERIPH_DRIVER-o ..\obj\stm32f10x_it.o --omf_browse ..\obj\stm32f10x_it.crf --depend ..\obj\stm32f10x_it.d)
 I (stm32f10x_it.h)(0x5CA34E5F)
@@ -591,7 +591,7 @@ I (..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M3\Generic\RealView\os_cpu.h)(0x5CA34E5F
 I (..\Project\qr_protocol.h)(0x5CA34E5F)
 I (..\HARDWAVE\TIMER\timer.h)(0x5CA34E5F)
 I (..\HARDWAVE\DRIVER\driver.h)(0x5CA34E5F)
-I (..\Project\driver2.h)(0x5CA5AFBB)
+I (..\Project\driver2.h)(0x5CA5BB8B)
 I (..\Project\pwm.h)(0x5CA34E5F)
 F (..\HARDWAVE\ADC\adc.c)(0x5CA34E5F)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\Project -I..\STM32F10x_FWLib\inc -I..\HARDWAVE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\UCOSIII\uC-CPU -I..\UCOSIII\uC-LIB -I..\UCOSIII\uCOS-III -I..\UCOSIII\UCOS_BSP -I..\UCOSIII\UCOS_CONFIG -I..\UCOSIII\uCOS-III\Source -I..\UCOSIII\uC-CPU\ARM-Cortex-M3\RealView -I..\UCOSIII\uC-LIB\Ports\ARM-Cortex-M3\RealView -I..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M3\Generic\RealView -I..\HARDWAVE\ADC -I..\HARDWAVE\CAN -I..\HARDWAVE\TIMER -I..\HARDWAVE\DEBUG -I..\HARDWAVE\DRIVER-I "E:\Laboratory\Penguin project\node program\Penguin_node_program\penguin robot\Project\RTE"-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="514" -DSTM32F10X_CL -DSTM32F10X_CL -DUSE_STDPERIPH_DRIVER-o ..\obj\adc.o --omf_browse ..\obj\adc.crf --depend ..\obj\adc.d)
 I (..\Project\main.h)(0x5CA34E5F)
@@ -653,9 +653,9 @@ I (..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M3\Generic\RealView\os_cpu.h)(0x5CA34E5F
 I (..\Project\qr_protocol.h)(0x5CA34E5F)
 I (..\HARDWAVE\TIMER\timer.h)(0x5CA34E5F)
 I (..\HARDWAVE\DRIVER\driver.h)(0x5CA34E5F)
-I (..\Project\driver2.h)(0x5CA5AFBB)
+I (..\Project\driver2.h)(0x5CA5BB8B)
 I (..\Project\pwm.h)(0x5CA34E5F)
-F (..\HARDWAVE\CAN\can.c)(0x5CA579E4)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\Project -I..\STM32F10x_FWLib\inc -I..\HARDWAVE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\UCOSIII\uC-CPU -I..\UCOSIII\uC-LIB -I..\UCOSIII\uCOS-III -I..\UCOSIII\UCOS_BSP -I..\UCOSIII\UCOS_CONFIG -I..\UCOSIII\uCOS-III\Source -I..\UCOSIII\uC-CPU\ARM-Cortex-M3\RealView -I..\UCOSIII\uC-LIB\Ports\ARM-Cortex-M3\RealView -I..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M3\Generic\RealView -I..\HARDWAVE\ADC -I..\HARDWAVE\CAN -I..\HARDWAVE\TIMER -I..\HARDWAVE\DEBUG -I..\HARDWAVE\DRIVER-I "E:\Laboratory\Penguin project\node program\Penguin_node_program\penguin robot\Project\RTE"-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="514" -DSTM32F10X_CL -DSTM32F10X_CL -DUSE_STDPERIPH_DRIVER-o ..\obj\can.o --omf_browse ..\obj\can.crf --depend ..\obj\can.d)
+F (..\HARDWAVE\CAN\can.c)(0x5CA5C281)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\Project -I..\STM32F10x_FWLib\inc -I..\HARDWAVE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\UCOSIII\uC-CPU -I..\UCOSIII\uC-LIB -I..\UCOSIII\uCOS-III -I..\UCOSIII\UCOS_BSP -I..\UCOSIII\UCOS_CONFIG -I..\UCOSIII\uCOS-III\Source -I..\UCOSIII\uC-CPU\ARM-Cortex-M3\RealView -I..\UCOSIII\uC-LIB\Ports\ARM-Cortex-M3\RealView -I..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M3\Generic\RealView -I..\HARDWAVE\ADC -I..\HARDWAVE\CAN -I..\HARDWAVE\TIMER -I..\HARDWAVE\DEBUG -I..\HARDWAVE\DRIVER-I "E:\Laboratory\Penguin project\node program\Penguin_node_program\penguin robot\Project\RTE"-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="514" -DSTM32F10X_CL -DSTM32F10X_CL -DUSE_STDPERIPH_DRIVER-o ..\obj\can.o --omf_browse ..\obj\can.crf --depend ..\obj\can.d)
 I (..\Project\main.h)(0x5CA34E5F)
 I (..\SYSTEM\sys\sys.h)(0x5CA34E5F)
 I (..\Project\stm32f10x.h)(0x5CA34E5F)
@@ -715,7 +715,7 @@ I (..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M3\Generic\RealView\os_cpu.h)(0x5CA34E5F
 I (..\Project\qr_protocol.h)(0x5CA34E5F)
 I (..\HARDWAVE\TIMER\timer.h)(0x5CA34E5F)
 I (..\HARDWAVE\DRIVER\driver.h)(0x5CA34E5F)
-I (..\Project\driver2.h)(0x5CA5AFBB)
+I (..\Project\driver2.h)(0x5CA5BB8B)
 I (..\Project\pwm.h)(0x5CA34E5F)
 F (..\HARDWAVE\TIMER\timer.c)(0x5CA34E5F)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\Project -I..\STM32F10x_FWLib\inc -I..\HARDWAVE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\UCOSIII\uC-CPU -I..\UCOSIII\uC-LIB -I..\UCOSIII\uCOS-III -I..\UCOSIII\UCOS_BSP -I..\UCOSIII\UCOS_CONFIG -I..\UCOSIII\uCOS-III\Source -I..\UCOSIII\uC-CPU\ARM-Cortex-M3\RealView -I..\UCOSIII\uC-LIB\Ports\ARM-Cortex-M3\RealView -I..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M3\Generic\RealView -I..\HARDWAVE\ADC -I..\HARDWAVE\CAN -I..\HARDWAVE\TIMER -I..\HARDWAVE\DEBUG -I..\HARDWAVE\DRIVER-I "E:\Laboratory\Penguin project\node program\Penguin_node_program\penguin robot\Project\RTE"-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="514" -DSTM32F10X_CL -DSTM32F10X_CL -DUSE_STDPERIPH_DRIVER-o ..\obj\timer.o --omf_browse ..\obj\timer.crf --depend ..\obj\timer.d)
 I (..\HARDWAVE\TIMER\timer.h)(0x5CA34E5F)
@@ -809,7 +809,7 @@ I (..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M3\Generic\RealView\os_cpu.h)(0x5CA34E5F
 I (..\Project\qr_protocol.h)(0x5CA34E5F)
 I (..\HARDWAVE\TIMER\timer.h)(0x5CA34E5F)
 I (..\HARDWAVE\DRIVER\driver.h)(0x5CA34E5F)
-I (..\Project\driver2.h)(0x5CA5AFBB)
+I (..\Project\driver2.h)(0x5CA5BB8B)
 I (..\Project\pwm.h)(0x5CA34E5F)
 F (..\HARDWAVE\DRIVER\driver.c)(0x5CA34E5F)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\Project -I..\STM32F10x_FWLib\inc -I..\HARDWAVE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\UCOSIII\uC-CPU -I..\UCOSIII\uC-LIB -I..\UCOSIII\uCOS-III -I..\UCOSIII\UCOS_BSP -I..\UCOSIII\UCOS_CONFIG -I..\UCOSIII\uCOS-III\Source -I..\UCOSIII\uC-CPU\ARM-Cortex-M3\RealView -I..\UCOSIII\uC-LIB\Ports\ARM-Cortex-M3\RealView -I..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M3\Generic\RealView -I..\HARDWAVE\ADC -I..\HARDWAVE\CAN -I..\HARDWAVE\TIMER -I..\HARDWAVE\DEBUG -I..\HARDWAVE\DRIVER-I "E:\Laboratory\Penguin project\node program\Penguin_node_program\penguin robot\Project\RTE"-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="514" -DSTM32F10X_CL -DSTM32F10X_CL -DUSE_STDPERIPH_DRIVER-o ..\obj\driver.o --omf_browse ..\obj\driver.crf --depend ..\obj\driver.d)
 I (..\Project\main.h)(0x5CA34E5F)
@@ -871,7 +871,7 @@ I (..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M3\Generic\RealView\os_cpu.h)(0x5CA34E5F
 I (..\Project\qr_protocol.h)(0x5CA34E5F)
 I (..\HARDWAVE\TIMER\timer.h)(0x5CA34E5F)
 I (..\HARDWAVE\DRIVER\driver.h)(0x5CA34E5F)
-I (..\Project\driver2.h)(0x5CA5AFBB)
+I (..\Project\driver2.h)(0x5CA5BB8B)
 I (..\Project\pwm.h)(0x5CA34E5F)
 F (.\pwm.c)(0x5CA34E5F)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\Project -I..\STM32F10x_FWLib\inc -I..\HARDWAVE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\UCOSIII\uC-CPU -I..\UCOSIII\uC-LIB -I..\UCOSIII\uCOS-III -I..\UCOSIII\UCOS_BSP -I..\UCOSIII\UCOS_CONFIG -I..\UCOSIII\uCOS-III\Source -I..\UCOSIII\uC-CPU\ARM-Cortex-M3\RealView -I..\UCOSIII\uC-LIB\Ports\ARM-Cortex-M3\RealView -I..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M3\Generic\RealView -I..\HARDWAVE\ADC -I..\HARDWAVE\CAN -I..\HARDWAVE\TIMER -I..\HARDWAVE\DEBUG -I..\HARDWAVE\DRIVER-I "E:\Laboratory\Penguin project\node program\Penguin_node_program\penguin robot\Project\RTE"-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="514" -DSTM32F10X_CL -DSTM32F10X_CL -DUSE_STDPERIPH_DRIVER-o ..\obj\pwm.o --omf_browse ..\obj\pwm.crf --depend ..\obj\pwm.d)
 I (main.h)(0x5CA34E5F)
@@ -933,9 +933,9 @@ I (..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M3\Generic\RealView\os_cpu.h)(0x5CA34E5F
 I (qr_protocol.h)(0x5CA34E5F)
 I (..\HARDWAVE\TIMER\timer.h)(0x5CA34E5F)
 I (..\HARDWAVE\DRIVER\driver.h)(0x5CA34E5F)
-I (driver2.h)(0x5CA5AFBB)
+I (driver2.h)(0x5CA5BB8B)
 I (pwm.h)(0x5CA34E5F)
-F (.\driver2.c)(0x5CA5AE89)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\Project -I..\STM32F10x_FWLib\inc -I..\HARDWAVE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\UCOSIII\uC-CPU -I..\UCOSIII\uC-LIB -I..\UCOSIII\uCOS-III -I..\UCOSIII\UCOS_BSP -I..\UCOSIII\UCOS_CONFIG -I..\UCOSIII\uCOS-III\Source -I..\UCOSIII\uC-CPU\ARM-Cortex-M3\RealView -I..\UCOSIII\uC-LIB\Ports\ARM-Cortex-M3\RealView -I..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M3\Generic\RealView -I..\HARDWAVE\ADC -I..\HARDWAVE\CAN -I..\HARDWAVE\TIMER -I..\HARDWAVE\DEBUG -I..\HARDWAVE\DRIVER-I "E:\Laboratory\Penguin project\node program\Penguin_node_program\penguin robot\Project\RTE"-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="514" -DSTM32F10X_CL -DSTM32F10X_CL -DUSE_STDPERIPH_DRIVER-o ..\obj\driver2.o --omf_browse ..\obj\driver2.crf --depend ..\obj\driver2.d)
+F (.\driver2.c)(0x5CA5BBC0)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\Project -I..\STM32F10x_FWLib\inc -I..\HARDWAVE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\UCOSIII\uC-CPU -I..\UCOSIII\uC-LIB -I..\UCOSIII\uCOS-III -I..\UCOSIII\UCOS_BSP -I..\UCOSIII\UCOS_CONFIG -I..\UCOSIII\uCOS-III\Source -I..\UCOSIII\uC-CPU\ARM-Cortex-M3\RealView -I..\UCOSIII\uC-LIB\Ports\ARM-Cortex-M3\RealView -I..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M3\Generic\RealView -I..\HARDWAVE\ADC -I..\HARDWAVE\CAN -I..\HARDWAVE\TIMER -I..\HARDWAVE\DEBUG -I..\HARDWAVE\DRIVER-I "E:\Laboratory\Penguin project\node program\Penguin_node_program\penguin robot\Project\RTE"-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="514" -DSTM32F10X_CL -DSTM32F10X_CL -DUSE_STDPERIPH_DRIVER-o ..\obj\driver2.o --omf_browse ..\obj\driver2.crf --depend ..\obj\driver2.d)
 I (main.h)(0x5CA34E5F)
 I (..\SYSTEM\sys\sys.h)(0x5CA34E5F)
 I (..\Project\stm32f10x.h)(0x5CA34E5F)
@@ -995,7 +995,7 @@ I (..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M3\Generic\RealView\os_cpu.h)(0x5CA34E5F
 I (qr_protocol.h)(0x5CA34E5F)
 I (..\HARDWAVE\TIMER\timer.h)(0x5CA34E5F)
 I (..\HARDWAVE\DRIVER\driver.h)(0x5CA34E5F)
-I (driver2.h)(0x5CA5AFBB)
+I (driver2.h)(0x5CA5BB8B)
 I (pwm.h)(0x5CA34E5F)
 F (..\SYSTEM\delay\delay.c)(0x5CA34E5F)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\Project -I..\STM32F10x_FWLib\inc -I..\HARDWAVE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\UCOSIII\uC-CPU -I..\UCOSIII\uC-LIB -I..\UCOSIII\uCOS-III -I..\UCOSIII\UCOS_BSP -I..\UCOSIII\UCOS_CONFIG -I..\UCOSIII\uCOS-III\Source -I..\UCOSIII\uC-CPU\ARM-Cortex-M3\RealView -I..\UCOSIII\uC-LIB\Ports\ARM-Cortex-M3\RealView -I..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M3\Generic\RealView -I..\HARDWAVE\ADC -I..\HARDWAVE\CAN -I..\HARDWAVE\TIMER -I..\HARDWAVE\DEBUG -I..\HARDWAVE\DRIVER-I "E:\Laboratory\Penguin project\node program\Penguin_node_program\penguin robot\Project\RTE"-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="514" -DSTM32F10X_CL -DSTM32F10X_CL -DUSE_STDPERIPH_DRIVER-o ..\obj\delay.o --omf_browse ..\obj\delay.crf --depend ..\obj\delay.d)
 I (..\SYSTEM\delay\delay.h)(0x5CA34E5F)

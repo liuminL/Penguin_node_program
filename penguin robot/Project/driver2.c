@@ -540,7 +540,6 @@ void CAN_BLDC_RePositionMod(unsigned char Number, long Temp_Position, long accel
         return;
     }
 		tx_message.StdId = can_id;      //帧ID为传入参数的CAN_ID
-		
 		CAN_BLDC_accelerationSet(Number, acceleration);
 		CAN_BLDC_decelerationSet(Number, deceleration);
 		

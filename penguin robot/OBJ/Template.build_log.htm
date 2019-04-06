@@ -22,7 +22,7 @@ Dialog DLL:      TARMSTM.DLL V1.64.0.0
  
 <h2>Project:</h2>
 E:\Laboratory\Penguin project\node program\Penguin_node_program\penguin robot\Project\Template.uvprojx
-Project File Date:  04/06/2019
+Project File Date:  04/07/2019
 
 <h2>Output:</h2>
 Build target 'Template'
@@ -41,21 +41,37 @@ compiling can.c...
   #ifndef       DEBUG_DATA_FEEDBACK && DEBUG_DATA_ERR && DEBUG_DATA_TRANS && DEBUG_CPU_USAGE
 ..\HARDWAVE\CAN\can.c(53): warning:  #177-D: variable "maskId" was declared but never referenced
         uint16_t maskId;                                                        
-..\HARDWAVE\CAN\can.c(215): warning:  #223-D: function "memcpy" declared implicitly
+..\HARDWAVE\CAN\can.c(211): warning:  #223-D: function "memcpy" declared implicitly
         memcpy(DATA, RxMessage.Data, 8);
 ..\HARDWAVE\CAN\can.c(203): warning:  #177-D: variable "err1" was declared but never referenced
         OS_ERR err,err1;
-..\HARDWAVE\CAN\can.c(342): warning:  #177-D: variable "motorPosition" was declared but never referenced
+..\HARDWAVE\CAN\can.c(337): warning:  #177-D: variable "motorPosition" was declared but never referenced
         int32_t motorPosition = 0;
-..\HARDWAVE\CAN\can.c(405): warning:  #223-D: function "memset" declared implicitly
+..\HARDWAVE\CAN\can.c(400): warning:  #223-D: function "memset" declared implicitly
         memset(&TxMessage.Data,0,sizeof(TxMessage.Data));               //清空数据缓存区
-..\HARDWAVE\CAN\can.c(478): warning:  #223-D: function "memset" declared implicitly
+..\HARDWAVE\CAN\can.c(473): warning:  #223-D: function "memset" declared implicitly
                 memset(can1Buffer,0x00,sizeof(can1Buffer));                                             //清空can缓冲区 
 ..\HARDWAVE\CAN\can.c: 12 warnings, 0 errors
+compiling driver2.c...
+qr_protocol.h(47): warning:  #9-D: nested comment is not allowed
+  ////////////////////////////////////////////////////////*/
+qr_protocol.h(105): warning:  #9-D: nested comment is not allowed
+  ////////////////////////////////////////////////////////*/
+qr_protocol.h(128): warning:  #9-D: nested comment is not allowed
+  ////////////////////////////////////////////////////////*/
+driver2.h(36): warning:  #1-D: last line of file ends without a newline
+  #endif
+pwm.h(11): warning:  #1-D: last line of file ends without a newline
+  #endif
+main.h(66): warning:  #14-D: extra text after expected end of preprocessing directive
+  #ifndef       DEBUG_DATA_FEEDBACK && DEBUG_DATA_ERR && DEBUG_DATA_TRANS && DEBUG_CPU_USAGE
+driver2.c(629): warning:  #1-D: last line of file ends without a newline
+  }
+driver2.c: 7 warnings, 0 errors
 linking...
 Program Size: Code=29732 RO-data=896 RW-data=472 ZI-data=16928  
 FromELF: creating hex file...
-"..\OBJ\Template.axf" - 0 Error(s), 12 Warning(s).
+"..\OBJ\Template.axf" - 0 Error(s), 19 Warning(s).
 
 <h2>Collection of Component include folders:</h2>
   E:\Laboratory\Penguin project\node program\Penguin_node_program\penguin robot\Project\RTE

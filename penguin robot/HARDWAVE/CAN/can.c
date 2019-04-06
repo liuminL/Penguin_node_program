@@ -36,7 +36,7 @@ struct Motor
 	char init_flag;
 };
 */
-struct Motor LEFT_Knee={0, 0, 0, 0x14, 0x28, 0xaf0, 0}, LEFT_Hip={0, 0, 0, 0x14, 0x28, 0xaf0, 0}, RIGHT_Hip={0, 0, 0, 0x14, 0x28, 0xaf0, 0}, RIGHT_Knee={0, 0, 0, 0x14, 0x28, 0xaf0, 0};
+struct Motor LEFT_Knee={0, 0, 0, 0x14, 0x28, 0xf00a, 0}, LEFT_Hip={0, 0, 0, 0x14, 0x28, 0xf00a, 0}, RIGHT_Hip={0, 0, 0, 0x14, 0x28, 0xf00a, 0}, RIGHT_Knee={0, 0, 0, 0x14, 0x28, 0xf00a, 0};
 //long LEFT_Knee = 0, LEFT_Hip = 0, RIGHT_Hip = 0, RIGHT_Knee = 0;
 uint8_t feedback[8];
 /*******************************************************************************

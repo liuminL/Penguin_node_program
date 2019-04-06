@@ -45,6 +45,7 @@ void CAN_BLDC_ResetMod(unsigned char Number, unsigned char Mode)
 		
     can_tx_success_flag2 = 0;
     CAN_Transmit(CAN2,&tx_message);
+		
 }
 /*
 读取电机结构体的电机状态
@@ -521,7 +522,7 @@ void CAN_BLDC_AbPositionMod(unsigned char Number, long Temp_Position)
 /*
 相对位置下的控制
 */
-void CAN_BLDC_RePositionMod(unsigned char Number, long Temp_Position, long acceleration, long deceleration)
+void CAN_BLDC_RePositionMod(unsigned char Number, long Temp_Position, long acceleration, long deceleration, unsigned char set_state, long speed)
 {
 		CanTxMsg tx_message;
 		unsigned short can_id = 0x600;
@@ -540,12 +541,68 @@ void CAN_BLDC_RePositionMod(unsigned char Number, long Temp_Position, long accel
         return;
     }
 		tx_message.StdId = can_id;      //帧ID为传入参数的CAN_ID
-		CAN_BLDC_accelerationSet(Number, acceleration);
-		CAN_BLDC_decelerationSet(Number, deceleration);
+		switch(Number)
+		{
+			case 0x1:
+			{
+					if(LEFT_Hip.init_flag == 0)
+					{
+						CAN_BLDC_accelerationSet(Number, acceleration);
+						CAN_BLDC_decelerationSet(Number, deceleration);
+						CAN_BLDC_ResetMod(Number, BLDC_Position_Mode);
+						LEFT_Hip.init_flag = 1;
+					}
+					break;
+			}
+			case 0x2:
+			{
+					if(LEFT_Knee.init_flag == 0)
+					{
+						CAN_BLDC_accelerationSet(Number, acceleration);
+						CAN_BLDC_decelerationSet(Number, deceleration);
+						CAN_BLDC_ResetMod(Number, BLDC_Position_Mode);
+						LEFT_Knee.init_flag = 1;
+					}
+					break;
+			}
+			case 0x3:
+			{
+					if(RIGHT_Hip.init_flag == 0)
+					{
+						CAN_BLDC_accelerationSet(Number, acceleration);
+						CAN_BLDC_decelerationSet(Number, deceleration);
+						CAN_BLDC_ResetMod(Number, BLDC_Position_Mode);
+						RIGHT_Hip.init_flag = 1;
+					}
+					break;
+			}
+			case 0x4:
+			{
+					if(RIGHT_Knee.init_flag == 0)
+					{
+						CAN_BLDC_accelerationSet(Number, acceleration);
+						CAN_BLDC_decelerationSet(Number, deceleration);
+						CAN_BLDC_ResetMod(Number, BLDC_Position_Mode);
+						RIGHT_Knee.init_flag = 1;
+					}
+					break;
+			}
+			default: return;
+		}
+		//if()
+		CAN_BLDC_Trapezoidal_speed(Number, speed);
 		
-		if(get_CAN_BLDC_MOTOR_STATE(Number) == 0x0)
-			CAN_BLDC_Control(Number, BLDC_ReControlWord_On);    //Let the motor connect to power
-		
+		if(set_state == 0x0)
+		{
+			CAN_BLDC_Control(Number, BLDC_ControlWord_Off);
+			return;
+		}		
+		else if (set_state == 0x1)
+			CAN_BLDC_Control(Number, BLDC_ReControlWord_On);
+		else if (set_state == 0x2)
+			CAN_BLDC_Control(Number, BLDC_ControlWord_AlarmClean);    //Let the motor connect to power
+		else 
+			return;
 		tx_message.Data[0] = 0x23;
     tx_message.Data[1] = 0x7B;
     tx_message.Data[2] = 0x60;

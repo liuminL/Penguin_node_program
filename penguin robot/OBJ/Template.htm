@@ -3,7 +3,7 @@
 <title>Static Call Graph - [..\OBJ\Template.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image ..\OBJ\Template.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050106: Last Updated: Thu Apr 04 16:41:26 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050106: Last Updated: Sat Apr 06 22:05:54 2019
 <BR><P>
 <H3>Maximum Stack Usage =        216 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -12,15 +12,15 @@ main &rArr; OSInit &rArr; OS_TmrInit &rArr; OSTaskCreate &rArr; OSSched &rArr; O
 <H3>
 Functions with no stack information
 </H3><UL>
- <LI><a href="#[11b]">CPU_IntDis</a>
- <LI><a href="#[11c]">CPU_IntEn</a>
+ <LI><a href="#[116]">CPU_IntDis</a>
+ <LI><a href="#[117]">CPU_IntEn</a>
  <LI><a href="#[6d]">CPU_SR_Save</a>
  <LI><a href="#[70]">CPU_SR_Restore</a>
- <LI><a href="#[11d]">CPU_WaitForInt</a>
- <LI><a href="#[11e]">CPU_WaitForExcept</a>
+ <LI><a href="#[118]">CPU_WaitForInt</a>
+ <LI><a href="#[119]">CPU_WaitForExcept</a>
  <LI><a href="#[d1]">CPU_CntLeadZeros</a>
- <LI><a href="#[11f]">CPU_CntTrailZeros</a>
- <LI><a href="#[120]">CPU_RevBits</a>
+ <LI><a href="#[11a]">CPU_CntTrailZeros</a>
+ <LI><a href="#[11b]">CPU_RevBits</a>
  <LI><a href="#[9d]">OSStartHighRdy</a>
  <LI><a href="#[8]">PendSV_Handler</a>
 </UL>
@@ -129,7 +129,7 @@ Global Symbols
 <P><STRONG><a name="[49]"></a>__main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry.o(.ARM.Collect$$$$00000000))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_cl.o(.text)
 </UL>
-<P><STRONG><a name="[115]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
+<P><STRONG><a name="[110]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
 
 <P><STRONG><a name="[57]"></a>_main_scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
 <BR><BR>[Calls]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
@@ -139,15 +139,15 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
 </UL>
 
-<P><STRONG><a name="[116]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
+<P><STRONG><a name="[111]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
 
-<P><STRONG><a name="[117]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
+<P><STRONG><a name="[112]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
 
-<P><STRONG><a name="[118]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
+<P><STRONG><a name="[113]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
 
-<P><STRONG><a name="[119]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000D))
+<P><STRONG><a name="[114]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000D))
 
-<P><STRONG><a name="[11a]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$0000000F))
+<P><STRONG><a name="[115]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$0000000F))
 
 <P><STRONG><a name="[0]"></a>Reset_Handler</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, startup_stm32f10x_cl.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_cl.o(RESET)
@@ -327,9 +327,9 @@ Global Symbols
 <P><STRONG><a name="[a]"></a>WWDG_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_stm32f10x_cl.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_cl.o(RESET)
 </UL>
-<P><STRONG><a name="[11b]"></a>CPU_IntDis</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, cpu_a.o(.text), UNUSED)
+<P><STRONG><a name="[116]"></a>CPU_IntDis</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, cpu_a.o(.text), UNUSED)
 
-<P><STRONG><a name="[11c]"></a>CPU_IntEn</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, cpu_a.o(.text), UNUSED)
+<P><STRONG><a name="[117]"></a>CPU_IntEn</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, cpu_a.o(.text), UNUSED)
 
 <P><STRONG><a name="[6d]"></a>CPU_SR_Save</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, cpu_a.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_Sched0
@@ -411,17 +411,17 @@ Global Symbols
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSStatReset
 </UL>
 
-<P><STRONG><a name="[11d]"></a>CPU_WaitForInt</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, cpu_a.o(.text), UNUSED)
+<P><STRONG><a name="[118]"></a>CPU_WaitForInt</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, cpu_a.o(.text), UNUSED)
 
-<P><STRONG><a name="[11e]"></a>CPU_WaitForExcept</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, cpu_a.o(.text), UNUSED)
+<P><STRONG><a name="[119]"></a>CPU_WaitForExcept</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, cpu_a.o(.text), UNUSED)
 
 <P><STRONG><a name="[d1]"></a>CPU_CntLeadZeros</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, cpu_a.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_PrioGetHighest
 </UL>
 
-<P><STRONG><a name="[11f]"></a>CPU_CntTrailZeros</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, cpu_a.o(.text), UNUSED)
+<P><STRONG><a name="[11a]"></a>CPU_CntTrailZeros</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, cpu_a.o(.text), UNUSED)
 
-<P><STRONG><a name="[120]"></a>CPU_RevBits</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, cpu_a.o(.text), UNUSED)
+<P><STRONG><a name="[11b]"></a>CPU_RevBits</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, cpu_a.o(.text), UNUSED)
 
 <P><STRONG><a name="[58]"></a>__scatterload</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, init.o(.text))
 <BR><BR>[Calls]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main_after_scatterload
@@ -429,11 +429,11 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_main_scatterload
 </UL>
 
-<P><STRONG><a name="[121]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
+<P><STRONG><a name="[11c]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
 
-<P><STRONG><a name="[122]"></a>__decompress</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __dczerorl2.o(.text), UNUSED)
+<P><STRONG><a name="[11d]"></a>__decompress</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __dczerorl2.o(.text), UNUSED)
 
-<P><STRONG><a name="[123]"></a>__decompress1</STRONG> (Thumb, 86 bytes, Stack size unknown bytes, __dczerorl2.o(.text), UNUSED)
+<P><STRONG><a name="[11e]"></a>__decompress1</STRONG> (Thumb, 86 bytes, Stack size unknown bytes, __dczerorl2.o(.text), UNUSED)
 
 <P><STRONG><a name="[9d]"></a>OSStartHighRdy</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, os_cpu_a.o(CODE))
 <BR><BR>[Called By]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSStart
@@ -442,12 +442,12 @@ Global Symbols
 <P><STRONG><a name="[8]"></a>PendSV_Handler</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, os_cpu_a.o(CODE))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_cl.o(RESET)
 </UL>
-<P><STRONG><a name="[10a]"></a>ADC_Cmd</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, stm32f10x_adc.o(i.ADC_Cmd))
-<BR><BR>[Called By]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sampleInit
+<P><STRONG><a name="[105]"></a>ADC_Cmd</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, stm32f10x_adc.o(i.ADC_Cmd))
+<BR><BR>[Called By]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sampleInit
 </UL>
 
-<P><STRONG><a name="[10b]"></a>ADC_DMACmd</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, stm32f10x_adc.o(i.ADC_DMACmd))
-<BR><BR>[Called By]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sampleInit
+<P><STRONG><a name="[106]"></a>ADC_DMACmd</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, stm32f10x_adc.o(i.ADC_DMACmd))
+<BR><BR>[Called By]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sampleInit
 </UL>
 
 <P><STRONG><a name="[5a]"></a>ADC_DeInit</STRONG> (Thumb, 78 bytes, Stack size 8 bytes, stm32f10x_adc.o(i.ADC_DeInit))
@@ -455,39 +455,39 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphResetCmd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sampleInit
+<BR>[Called By]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sampleInit
 </UL>
 
-<P><STRONG><a name="[10f]"></a>ADC_GetCalibrationStatus</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, stm32f10x_adc.o(i.ADC_GetCalibrationStatus))
-<BR><BR>[Called By]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sampleInit
+<P><STRONG><a name="[10a]"></a>ADC_GetCalibrationStatus</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, stm32f10x_adc.o(i.ADC_GetCalibrationStatus))
+<BR><BR>[Called By]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sampleInit
 </UL>
 
-<P><STRONG><a name="[10d]"></a>ADC_GetResetCalibrationStatus</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, stm32f10x_adc.o(i.ADC_GetResetCalibrationStatus))
-<BR><BR>[Called By]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sampleInit
+<P><STRONG><a name="[108]"></a>ADC_GetResetCalibrationStatus</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, stm32f10x_adc.o(i.ADC_GetResetCalibrationStatus))
+<BR><BR>[Called By]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sampleInit
 </UL>
 
-<P><STRONG><a name="[108]"></a>ADC_Init</STRONG> (Thumb, 70 bytes, Stack size 12 bytes, stm32f10x_adc.o(i.ADC_Init))
+<P><STRONG><a name="[103]"></a>ADC_Init</STRONG> (Thumb, 70 bytes, Stack size 12 bytes, stm32f10x_adc.o(i.ADC_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = ADC_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sampleInit
+<BR>[Called By]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sampleInit
 </UL>
 
-<P><STRONG><a name="[109]"></a>ADC_RegularChannelConfig</STRONG> (Thumb, 184 bytes, Stack size 20 bytes, stm32f10x_adc.o(i.ADC_RegularChannelConfig))
+<P><STRONG><a name="[104]"></a>ADC_RegularChannelConfig</STRONG> (Thumb, 184 bytes, Stack size 20 bytes, stm32f10x_adc.o(i.ADC_RegularChannelConfig))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = ADC_RegularChannelConfig
 </UL>
-<BR>[Called By]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sampleInit
+<BR>[Called By]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sampleInit
 </UL>
 
-<P><STRONG><a name="[10c]"></a>ADC_ResetCalibration</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f10x_adc.o(i.ADC_ResetCalibration))
-<BR><BR>[Called By]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sampleInit
+<P><STRONG><a name="[107]"></a>ADC_ResetCalibration</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f10x_adc.o(i.ADC_ResetCalibration))
+<BR><BR>[Called By]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sampleInit
 </UL>
 
-<P><STRONG><a name="[110]"></a>ADC_SoftwareStartConvCmd</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, stm32f10x_adc.o(i.ADC_SoftwareStartConvCmd))
-<BR><BR>[Called By]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sampleInit
+<P><STRONG><a name="[10b]"></a>ADC_SoftwareStartConvCmd</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, stm32f10x_adc.o(i.ADC_SoftwareStartConvCmd))
+<BR><BR>[Called By]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sampleInit
 </UL>
 
-<P><STRONG><a name="[10e]"></a>ADC_StartCalibration</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f10x_adc.o(i.ADC_StartCalibration))
-<BR><BR>[Called By]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sampleInit
+<P><STRONG><a name="[109]"></a>ADC_StartCalibration</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f10x_adc.o(i.ADC_StartCalibration))
+<BR><BR>[Called By]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sampleInit
 </UL>
 
 <P><STRONG><a name="[5c]"></a>BSP_CPU_ClkFreq</STRONG> (Thumb, 16 bytes, Stack size 24 bytes, bsp.o(i.BSP_CPU_ClkFreq))
@@ -501,8 +501,8 @@ Global Symbols
 <P><STRONG><a name="[4]"></a>BusFault_Handler</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_it.o(i.BusFault_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_cl.o(RESET)
 </UL>
-<P><STRONG><a name="[1e]"></a>CAN1_RX0_IRQHandler</STRONG> (Thumb, 294 bytes, Stack size 48 bytes, can.o(i.CAN1_RX0_IRQHandler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 188 + Unknown Stack Size
+<P><STRONG><a name="[1e]"></a>CAN1_RX0_IRQHandler</STRONG> (Thumb, 312 bytes, Stack size 56 bytes, can.o(i.CAN1_RX0_IRQHandler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 196 + Unknown Stack Size
 <LI>Call Chain = CAN1_RX0_IRQHandler &rArr; OSSemPend &rArr; OS_Pend &rArr; OS_TaskBlock &rArr; OS_TickListInsert
 </UL>
 <BR>[Calls]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Receive
@@ -524,30 +524,40 @@ Global Symbols
 <LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_CAN_BLDC_MOTOR_STATE
 <LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_Delay_Us
 </UL>
-<BR>[Called By]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_ResetMod
-<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_RePositionMod
+<BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_RePositionMod
+<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_ResetMod
 </UL>
 
-<P><STRONG><a name="[64]"></a>CAN_BLDC_RePositionMod</STRONG> (Thumb, 198 bytes, Stack size 48 bytes, driver2.o(i.CAN_BLDC_RePositionMod))
-<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = CAN_BLDC_RePositionMod &rArr; CAN_BLDC_decelerationSet &rArr; CAN_Transmit
+<P><STRONG><a name="[64]"></a>CAN_BLDC_RePositionMod</STRONG> (Thumb, 394 bytes, Stack size 56 bytes, driver2.o(i.CAN_BLDC_RePositionMod))
+<BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = CAN_BLDC_RePositionMod &rArr; CAN_BLDC_ResetMod &rArr; CAN_BLDC_Control &rArr; CAN_Transmit
 </UL>
 <BR>[Calls]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Transmit
-<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_CAN_BLDC_MOTOR_STATE
 <LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_decelerationSet
 <LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_accelerationSet
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_Trapezoidal_speed
+<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_ResetMod
 <LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_Control
 <LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_Delay_Us
 </UL>
 <BR>[Called By]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;can2_task
 </UL>
 
-<P><STRONG><a name="[68]"></a>CAN_BLDC_ResetMod</STRONG> (Thumb, 118 bytes, Stack size 40 bytes, driver2.o(i.CAN_BLDC_ResetMod))
+<P><STRONG><a name="[67]"></a>CAN_BLDC_ResetMod</STRONG> (Thumb, 118 bytes, Stack size 40 bytes, driver2.o(i.CAN_BLDC_ResetMod))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = CAN_BLDC_ResetMod &rArr; CAN_BLDC_Control &rArr; CAN_Transmit
 </UL>
 <BR>[Calls]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Transmit
 <LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_Control
 </UL>
-<BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_RePositionMod
+</UL>
+
+<P><STRONG><a name="[68]"></a>CAN_BLDC_Trapezoidal_speed</STRONG> (Thumb, 154 bytes, Stack size 40 bytes, driver2.o(i.CAN_BLDC_Trapezoidal_speed))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = CAN_BLDC_Trapezoidal_speed &rArr; CAN_Transmit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Transmit
+<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_Delay_Us
+</UL>
+<BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_RePositionMod
 </UL>
 
 <P><STRONG><a name="[65]"></a>CAN_BLDC_accelerationSet</STRONG> (Thumb, 154 bytes, Stack size 40 bytes, driver2.o(i.CAN_BLDC_accelerationSet))
@@ -597,11 +607,12 @@ Global Symbols
 <P><STRONG><a name="[61]"></a>CAN_Transmit</STRONG> (Thumb, 294 bytes, Stack size 8 bytes, stm32f10x_can.o(i.CAN_Transmit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = CAN_Transmit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_ResetMod
-<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_RePositionMod
+<BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_RePositionMod
 <LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;can1SendMsg
 <LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_decelerationSet
 <LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_accelerationSet
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_Trapezoidal_speed
+<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_ResetMod
 <LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_Control
 </UL>
 
@@ -775,18 +786,18 @@ Global Symbols
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSStatReset
 </UL>
 
-<P><STRONG><a name="[107]"></a>DMA_Cmd</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_dma.o(i.DMA_Cmd))
-<BR><BR>[Called By]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sampleInit
+<P><STRONG><a name="[102]"></a>DMA_Cmd</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_dma.o(i.DMA_Cmd))
+<BR><BR>[Called By]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sampleInit
 </UL>
 
-<P><STRONG><a name="[105]"></a>DMA_DeInit</STRONG> (Thumb, 324 bytes, Stack size 0 bytes, stm32f10x_dma.o(i.DMA_DeInit))
-<BR><BR>[Called By]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sampleInit
+<P><STRONG><a name="[100]"></a>DMA_DeInit</STRONG> (Thumb, 324 bytes, Stack size 0 bytes, stm32f10x_dma.o(i.DMA_DeInit))
+<BR><BR>[Called By]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sampleInit
 </UL>
 
-<P><STRONG><a name="[106]"></a>DMA_Init</STRONG> (Thumb, 60 bytes, Stack size 8 bytes, stm32f10x_dma.o(i.DMA_Init))
+<P><STRONG><a name="[101]"></a>DMA_Init</STRONG> (Thumb, 60 bytes, Stack size 8 bytes, stm32f10x_dma.o(i.DMA_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = DMA_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sampleInit
+<BR>[Called By]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sampleInit
 </UL>
 
 <P><STRONG><a name="[7]"></a>DebugMon_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f10x_it.o(i.DebugMon_Handler))
@@ -795,7 +806,7 @@ Global Symbols
 <P><STRONG><a name="[7c]"></a>GPIO_Init</STRONG> (Thumb, 278 bytes, Stack size 24 bytes, stm32f10x_gpio.o(i.GPIO_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = GPIO_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sampleInit
+<BR>[Called By]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sampleInit
 <LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;can2Init
 <LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;can1Init
 <LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM3_PWM_Init
@@ -849,7 +860,7 @@ Global Symbols
 <LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM5_Int_Init
 </UL>
 
-<P><STRONG><a name="[102]"></a>NVIC_PriorityGroupConfig</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, misc.o(i.NVIC_PriorityGroupConfig))
+<P><STRONG><a name="[fd]"></a>NVIC_PriorityGroupConfig</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, misc.o(i.NVIC_PriorityGroupConfig))
 <BR><BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
@@ -942,8 +953,7 @@ Global Symbols
 <LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CPU_IntDisMeasStop
 <LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CPU_IntDisMeasStart
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_osschedlock
-<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TmrTask
+<BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TmrTask
 </UL>
 
 <P><STRONG><a name="[95]"></a>OSSchedRoundRobinCfg</STRONG> (Thumb, 96 bytes, Stack size 24 bytes, os_core.o(i.OSSchedRoundRobinCfg))
@@ -969,8 +979,7 @@ Global Symbols
 <LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CPU_IntDisMeasStart
 <LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSSched
 </UL>
-<BR>[Called By]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_osschedunlock
-<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TmrTask
+<BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TmrTask
 </UL>
 
 <P><STRONG><a name="[98]"></a>OSSemCreate</STRONG> (Thumb, 210 bytes, Stack size 24 bytes, os_sem.o(i.OSSemCreate))
@@ -1205,7 +1214,6 @@ Global Symbols
 <LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSSched
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSStatTaskCPUUsageInit
-<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ostimedly
 <LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_StatTask
 </UL>
 
@@ -1924,12 +1932,12 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TmrTask
 </UL>
 
-<P><STRONG><a name="[104]"></a>RCC_ADCCLKConfig</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_rcc.o(i.RCC_ADCCLKConfig))
-<BR><BR>[Called By]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sampleInit
+<P><STRONG><a name="[ff]"></a>RCC_ADCCLKConfig</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_rcc.o(i.RCC_ADCCLKConfig))
+<BR><BR>[Called By]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sampleInit
 </UL>
 
-<P><STRONG><a name="[103]"></a>RCC_AHBPeriphClockCmd</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_rcc.o(i.RCC_AHBPeriphClockCmd))
-<BR><BR>[Called By]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sampleInit
+<P><STRONG><a name="[fe]"></a>RCC_AHBPeriphClockCmd</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_rcc.o(i.RCC_AHBPeriphClockCmd))
+<BR><BR>[Called By]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sampleInit
 </UL>
 
 <P><STRONG><a name="[e8]"></a>RCC_APB1PeriphClockCmd</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_rcc.o(i.RCC_APB1PeriphClockCmd))
@@ -1940,7 +1948,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[7b]"></a>RCC_APB2PeriphClockCmd</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_rcc.o(i.RCC_APB2PeriphClockCmd))
-<BR><BR>[Called By]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sampleInit
+<BR><BR>[Called By]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sampleInit
 <LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;can2Init
 <LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;can1Init
 <LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM3_PWM_Init
@@ -2115,19 +2123,19 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM3_PWM_Init
 </UL>
 
-<P><STRONG><a name="[111]"></a>TIM_SetCompare1</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_tim.o(i.TIM_SetCompare1))
+<P><STRONG><a name="[10c]"></a>TIM_SetCompare1</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_tim.o(i.TIM_SetCompare1))
 <BR><BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;steer_task
 </UL>
 
-<P><STRONG><a name="[112]"></a>TIM_SetCompare2</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_tim.o(i.TIM_SetCompare2))
+<P><STRONG><a name="[10d]"></a>TIM_SetCompare2</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_tim.o(i.TIM_SetCompare2))
 <BR><BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;steer_task
 </UL>
 
-<P><STRONG><a name="[113]"></a>TIM_SetCompare3</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_tim.o(i.TIM_SetCompare3))
+<P><STRONG><a name="[10e]"></a>TIM_SetCompare3</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_tim.o(i.TIM_SetCompare3))
 <BR><BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;steer_task
 </UL>
 
-<P><STRONG><a name="[114]"></a>TIM_SetCompare4</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_tim.o(i.TIM_SetCompare4))
+<P><STRONG><a name="[10f]"></a>TIM_SetCompare4</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_tim.o(i.TIM_SetCompare4))
 <BR><BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;steer_task
 </UL>
 
@@ -2140,11 +2148,11 @@ Global Symbols
 <P><STRONG><a name="[5]"></a>UsageFault_Handler</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_it.o(i.UsageFault_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_cl.o(RESET)
 </UL>
-<P><STRONG><a name="[124]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
+<P><STRONG><a name="[11f]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
 
-<P><STRONG><a name="[125]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
+<P><STRONG><a name="[120]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
 
-<P><STRONG><a name="[126]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
+<P><STRONG><a name="[121]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
 
 <P><STRONG><a name="[f3]"></a>can1Init</STRONG> (Thumb, 296 bytes, Stack size 80 bytes, can.o(i.can1Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = can1Init &rArr; GPIO_Init
@@ -2192,9 +2200,9 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[53]"></a>can2_task</STRONG> (Thumb, 96 bytes, Stack size 16 bytes, can.o(i.can2_task))
-<BR><BR>[Stack]<UL><LI>Max Depth = 112 + Unknown Stack Size
-<LI>Call Chain = can2_task &rArr; CAN_BLDC_RePositionMod &rArr; CAN_BLDC_decelerationSet &rArr; CAN_Transmit
+<P><STRONG><a name="[53]"></a>can2_task</STRONG> (Thumb, 144 bytes, Stack size 16 bytes, can.o(i.can2_task))
+<BR><BR>[Stack]<UL><LI>Max Depth = 160 + Unknown Stack Size
+<LI>Call Chain = can2_task &rArr; CAN_BLDC_RePositionMod &rArr; CAN_BLDC_ResetMod &rArr; CAN_BLDC_Control &rArr; CAN_Transmit
 </UL>
 <BR>[Calls]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_RePositionMod
 <LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTimeDlyHMSM
@@ -2209,57 +2217,6 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[fc]"></a>delay_ms</STRONG> (Thumb, 66 bytes, Stack size 16 bytes, delay.o(i.delay_ms))
-<BR><BR>[Stack]<UL><LI>Max Depth = 96 + Unknown Stack Size
-<LI>Call Chain = delay_ms &rArr; delay_us &rArr; delay_osschedunlock &rArr; OSSchedUnlock &rArr; OSSched &rArr; OS_PrioGetHighest
-</UL>
-<BR>[Calls]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
-<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ostimedly
-</UL>
-<BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-</UL>
-
-<P><STRONG><a name="[ff]"></a>delay_osschedlock</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, delay.o(i.delay_osschedlock))
-<BR><BR>[Stack]<UL><LI>Max Depth = 32 + Unknown Stack Size
-<LI>Call Chain = delay_osschedlock &rArr; OSSchedLock &rArr; OS_SchedLockTimeMeasStart
-</UL>
-<BR>[Calls]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSSchedLock
-</UL>
-<BR>[Called By]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
-</UL>
-
-<P><STRONG><a name="[100]"></a>delay_osschedunlock</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, delay.o(i.delay_osschedunlock))
-<BR><BR>[Stack]<UL><LI>Max Depth = 48 + Unknown Stack Size
-<LI>Call Chain = delay_osschedunlock &rArr; OSSchedUnlock &rArr; OSSched &rArr; OS_PrioGetHighest
-</UL>
-<BR>[Calls]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSSchedUnlock
-</UL>
-<BR>[Called By]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
-</UL>
-
-<P><STRONG><a name="[fd]"></a>delay_ostimedly</STRONG> (Thumb, 16 bytes, Stack size 16 bytes, delay.o(i.delay_ostimedly))
-<BR><BR>[Stack]<UL><LI>Max Depth = 76 + Unknown Stack Size
-<LI>Call Chain = delay_ostimedly &rArr; OSTimeDly &rArr; OS_TickListInsert
-</UL>
-<BR>[Calls]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTimeDly
-</UL>
-<BR>[Called By]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
-</UL>
-
-<P><STRONG><a name="[fe]"></a>delay_us</STRONG> (Thumb, 86 bytes, Stack size 32 bytes, delay.o(i.delay_us))
-<BR><BR>[Stack]<UL><LI>Max Depth = 80 + Unknown Stack Size
-<LI>Call Chain = delay_us &rArr; delay_osschedunlock &rArr; OSSchedUnlock &rArr; OSSched &rArr; OS_PrioGetHighest
-</UL>
-<BR>[Calls]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_osschedunlock
-<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_osschedlock
-</UL>
-<BR>[Called By]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
-</UL>
-
-<P><STRONG><a name="[67]"></a>get_CAN_BLDC_MOTOR_STATE</STRONG> (Thumb, 46 bytes, Stack size 0 bytes, driver2.o(i.get_CAN_BLDC_MOTOR_STATE))
-<BR><BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_RePositionMod
-</UL>
-
 <P><STRONG><a name="[56]"></a>led_task</STRONG> (Thumb, 42 bytes, Stack size 16 bytes, led.o(i.led_task))
 <BR><BR>[Stack]<UL><LI>Max Depth = 108 + Unknown Stack Size
 <LI>Call Chain = led_task &rArr; OSTimeDlyHMSM &rArr; OS_TickListInsert
@@ -2268,12 +2225,11 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> main.o(i.start_task)
 </UL>
-<P><STRONG><a name="[47]"></a>main</STRONG> (Thumb, 398 bytes, Stack size 40 bytes, main.o(i.main))
+<P><STRONG><a name="[47]"></a>main</STRONG> (Thumb, 326 bytes, Stack size 40 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 216 + Unknown Stack Size
 <LI>Call Chain = main &rArr; OSInit &rArr; OS_TmrInit &rArr; OSTaskCreate &rArr; OSSched &rArr; OS_PrioGetHighest
 </UL>
-<BR>[Calls]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sampleInit
-<LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
+<BR>[Calls]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sampleInit
 <LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_init
 <LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;can2Init
 <LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;can1Init
@@ -2287,36 +2243,35 @@ Global Symbols
 <LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTaskCreate
 <LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSStart
 <LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSInit
-<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_PriorityGroupConfig
+<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_PriorityGroupConfig
 <LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Init
 <LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CPU_SR_Save
 <LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CPU_SR_Restore
 <LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CPU_IntDisMeasStop
 <LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CPU_IntDisMeasStart
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_ResetMod
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> entry9a.o(.ARM.Collect$$$$0000000B)
 </UL>
-<P><STRONG><a name="[101]"></a>sampleInit</STRONG> (Thumb, 378 bytes, Stack size 72 bytes, adc.o(i.sampleInit))
+<P><STRONG><a name="[fc]"></a>sampleInit</STRONG> (Thumb, 378 bytes, Stack size 72 bytes, adc.o(i.sampleInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = sampleInit &rArr; GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_StartCalibration
-<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_SoftwareStartConvCmd
-<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_ResetCalibration
-<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_RegularChannelConfig
-<LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_Init
-<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_GetResetCalibrationStatus
-<LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_GetCalibrationStatus
+<BR>[Calls]<UL><LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_StartCalibration
+<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_SoftwareStartConvCmd
+<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_ResetCalibration
+<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_RegularChannelConfig
+<LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_Init
+<LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_GetResetCalibrationStatus
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_GetCalibrationStatus
 <LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_DeInit
-<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_DMACmd
-<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_Cmd
+<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_DMACmd
+<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_Cmd
 <LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphClockCmd
-<LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_AHBPeriphClockCmd
-<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_ADCCLKConfig
+<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_AHBPeriphClockCmd
+<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_ADCCLKConfig
 <LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
-<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Init
-<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_DeInit
-<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Cmd
+<LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Init
+<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_DeInit
+<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Cmd
 </UL>
 <BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -2358,10 +2313,10 @@ Global Symbols
 <LI>Call Chain = steer_task &rArr; OSTimeDlyHMSM &rArr; OS_TickListInsert
 </UL>
 <BR>[Calls]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTimeDlyHMSM
-<LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetCompare4
-<LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetCompare3
-<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetCompare2
-<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetCompare1
+<LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetCompare4
+<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetCompare3
+<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetCompare2
+<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetCompare1
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> main.o(i.start_task)
 </UL><P>
@@ -2388,6 +2343,7 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_RePositionMod
 <LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_decelerationSet
 <LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_accelerationSet
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_Trapezoidal_speed
 <LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_Control
 </UL>
 

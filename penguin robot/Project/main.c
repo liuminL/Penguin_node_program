@@ -91,6 +91,7 @@ int main(void)
 	CAN_RoboModule_DRV_Config(0,3,0x0A, 0);			//开启对外发送速度、电流、位置，不开限位
 	delay_ms(500);
 	*/
+	/*
 	delay_ms(500);
 	CAN_BLDC_ResetMod(1, BLDC_Position_Mode);
 	delay_ms(500);
@@ -100,7 +101,7 @@ int main(void)
 	delay_ms(500);
 	CAN_BLDC_ResetMod(4, BLDC_Position_Mode);
 	delay_ms(500);
-
+	*/
 	
 	TIM3_PWM_Init(arr1,psc1);//pwm频率：72000000/(psc+1)=0.5M,  0.5M/(arr+1)=50HZ
 	TIM1_PWM_Init(arr2,psc2);

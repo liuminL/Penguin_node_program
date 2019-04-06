@@ -203,6 +203,8 @@ void CAN1_RX0_IRQHandler(void)
 	
 	uint16_t nodeId = 0;
 	u8 msgId = 0;
+	u8 swId = 0;
+	u16 spId = 0;
 	CAN_Receive(CAN1, 0, &RxMessage);
 	//修改
 	//ty = RxMessage.Data[0]<<8;
@@ -211,44 +213,32 @@ void CAN1_RX0_IRQHandler(void)
 	//data23 = (((int16_t)RxMessage.Data[3])<<8) | ((int16_t)(RxMessage.Data[2]));
 	//data45 = (((int16_t)RxMessage.Data[5])<<8) | ((int16_t)(RxMessage.Data[4]));
 	memcpy(DATA, RxMessage.Data, 8);
-	
-#ifdef DEBUG_EN>0								//调试代码
-	
-	msgId = MII_MSG_SPLIT_MSGID(RxMessage.StdId);//获取消息ID
-	nodeId = MII_MSG_SPLIT_NODEID(RxMessage.StdId);	//获取节点ID
-	switch(msgId)
-	{
-		case MII_MSG_DEBUG_1:
-			if(nodeId == FILTER_ID)
-			{
-				memcpy(&dataSize,RxMessage.Data,4);		//获取测试数据量大小
-				OSSemPost(&SYNC_SEM,OS_OPT_POST_1,&err);//发送信号量1,测试开始;
-				TIM_Cmd(TIM3,ENABLE);  //使能TIMx					
-			}
-			break;
-		case MII_MSG_DEBUG_2:
-				OSSemPost(&SYNC_SEM1,OS_OPT_POST_1,&err1);//发送信号量2,测试开始;
-#ifdef DEBUG_DATA_FEEDBACK1>0
-				memcpy(&can1Buffer,RxMessage.Data,8);
-				can1SendMsg(can1Buffer,MII_MSG_HEARTBEAT_1,8); 
-#endif
-			break;
-		default :
-			break;
-	}
-#else						//非调试代码
 	nodeId = MII_MSG_SPLIT_NODEID(RxMessage.StdId);		//获取节点ID
 	msgId	 = MII_MSG_SPLIT_MSGID(RxMessage.StdId);			//获取消息ID
+	swId = MII_MSG_SPLIT_SWID(RxMessage.ExtId);
+	spId = MII_MSG_SPLIT_SPID(RxMessage.ExtId);
+	
 	if(nodeId == FILTER_ID )
 	{
 		if(msgId == MII_MSG_COMMON_1)							//第一帧：左电机1、2   dirtionID_ndoeID_msgID   00 0010 01001 = 0x49
 		{
+			/*
 			Flag_MotorChange = 1;
 			nodeStatus = 1;
 			if(DATA[0] != 0x88888888)
 				LEFT_Knee.motor_position = DATA[0];
 			if(DATA[1] != 0x88888888)
 				LEFT_Hip.motor_position  = DATA[1];
+			*/
+			Flag_MotorChange = 1;
+			nodeStatus = 1;
+			
+			LEFT_Knee.set_state = swId;
+			LEFT_Knee.motor_Trapezoidal_speed = spId;
+			memcpy(&(LEFT_Knee.motor_acceleration), RxMessage.Data, 2);
+			memcpy(&(LEFT_Knee.motor_deceleration), RxMessage.Data, 2);
+			if(DATA[1] != 0x88888888)
+				LEFT_Knee.motor_position = DATA[1];			
 		}
 		else if(msgId == MII_MSG_COMMON_2)        //第二帧：右电机3、4              0x4A
 		{
@@ -298,7 +288,6 @@ void CAN1_RX0_IRQHandler(void)
 	{
 		OSSemPend(&SYNC_SEM,0,OS_OPT_PEND_BLOCKING,0,&err); //请求信号量1
 	}
-#endif
 
 }
 
@@ -466,12 +455,10 @@ void can2_task(void *p_arg)
 	{
 		if(Flag_MotorChange == 1)
 		{
-			CAN_BLDC_RePositionMod(2, LEFT_Knee.motor_position, LEFT_Knee.motor_acceleration, LEFT_Knee.motor_deceleration);
-			
-			CAN_BLDC_RePositionMod(1, LEFT_Hip.motor_position, LEFT_Hip.motor_acceleration, LEFT_Hip.motor_deceleration);
-			CAN_BLDC_RePositionMod(3, RIGHT_Hip.motor_position, RIGHT_Hip.motor_acceleration, RIGHT_Hip.motor_deceleration);
-			CAN_BLDC_RePositionMod(4, RIGHT_Knee.motor_position, RIGHT_Knee.motor_acceleration, RIGHT_Knee.motor_deceleration);
-			
+			CAN_BLDC_RePositionMod(1, LEFT_Hip.motor_position, LEFT_Hip.motor_acceleration, LEFT_Hip.motor_deceleration, LEFT_Hip.set_state, LEFT_Hip.motor_Trapezoidal_speed);
+			CAN_BLDC_RePositionMod(2, LEFT_Knee.motor_position, LEFT_Knee.motor_acceleration, LEFT_Knee.motor_deceleration, LEFT_Knee.set_state, LEFT_Knee.motor_Trapezoidal_speed);
+			CAN_BLDC_RePositionMod(3, RIGHT_Hip.motor_position, RIGHT_Hip.motor_acceleration, RIGHT_Hip.motor_deceleration, RIGHT_Hip.set_state, RIGHT_Hip.motor_Trapezoidal_speed);
+			CAN_BLDC_RePositionMod(4, RIGHT_Knee.motor_position, RIGHT_Knee.motor_acceleration, RIGHT_Knee.motor_deceleration, RIGHT_Knee.set_state, RIGHT_Knee.motor_Trapezoidal_speed);			
 			Flag_MotorChange = 0;
 		}
 		OSTimeDlyHMSM(0,0,0,100,OS_OPT_TIME_HMSM_STRICT,&err); //延时,发起任务调度

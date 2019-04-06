@@ -68,6 +68,9 @@ to Host  1| X|    NODE ID|        MSG ID|
 
 #define MII_MSG_SPLIT_MSGID(msg)    ((msg) & (0x001Fu))
 
+//THIS is for ExtCAN
+#define MII_MSG_SPLIT_SWID(msg)     ((msg) >> 16)
+#define MII_MSG_SPLIT_SPID(msg)     ((msg) & (0x0FFFF))
 // Filling the node_id and msg_id into the given msg which contains the
 // message head such as where will to go.
 #define __MII_MSG_FILL(msg, node_id, msg_id) \

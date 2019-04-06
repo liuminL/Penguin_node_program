@@ -202,23 +202,13 @@ void CAN1_RX0_IRQHandler(void)
 {
 	OS_ERR err,err1;
 	CanRxMsg RxMessage;
-	//int32_t data01, data23, data45;
 	int32_t DATA[2];
-	//uint16_t ty,tz;
-	
 	uint16_t nodeId = 0;
 	u8 msgId = 0;
 	u8 swId = 0;
 	u16 spId = 0;
 	CAN_Receive(CAN1, 0, &RxMessage);
-	//修改
-	//ty = RxMessage.Data[0]<<8;
-	//tz = (uint16_t)RxMessage.Data[0];
-	//data01 = (((int16_t)RxMessage.Data[1])<<8) | ((int16_t)(RxMessage.Data[0]));
-	//data23 = (((int16_t)RxMessage.Data[3])<<8) | ((int16_t)(RxMessage.Data[2]));
-	//data45 = (((int16_t)RxMessage.Data[5])<<8) | ((int16_t)(RxMessage.Data[4]));
 	memcpy(DATA, RxMessage.Data, 8);
-	
 	nodeId = MII_MSG_SPLIT_EXNODEID(RxMessage.ExtId);
 	msgId	 = MII_MSG_SPLIT_EXMSGID(RxMessage.ExtId);			//获取消息ID
 	swId = MII_MSG_SPLIT_EXSWID(RxMessage.ExtId);
@@ -226,15 +216,10 @@ void CAN1_RX0_IRQHandler(void)
 	
 	if(nodeId == FILTER_ID )
 	{
-		if(msgId == MII_MSG_COMMON_1)							//第一帧：左电机1、2   dirtionID_ndoeID_msgID   00 0010 01001 = 0x49
+		if(msgId == MII_MSG_COMMON_1)							
 		{
 			/*
-			Flag_MotorChange = 1;
-			nodeStatus = 1;
-			if(DATA[0] != 0x88888888)
-				LEFT_Knee.motor_position = DATA[0];
-			if(DATA[1] != 0x88888888)
-				LEFT_Hip.motor_position  = DATA[1];
+			第一帧，0x1240000 断电  0x1250000 上电  0x1260000 清除报警
 			*/
 			Flag_MotorChange = 1;
 			nodeStatus = 1;
@@ -246,25 +231,66 @@ void CAN1_RX0_IRQHandler(void)
 			if(DATA[1] != 0x88888888)
 				LEFT_Knee.motor_position = DATA[1];			
 		}
-		else if(msgId == MII_MSG_COMMON_2)        //第二帧：右电机3、4              0x4A
+		else if(msgId == MII_MSG_COMMON_2)        
 		{
-			nodeStatus = 1;
+			/*
+			第二帧，0x1280000 断电  0x1290000 上电  0x12a0000 清除报警
+			*/
 			Flag_MotorChange = 1;
-			if(DATA[0] != 0x88888888)
-				RIGHT_Knee.motor_position = DATA[0];
+			nodeStatus = 1;
+			
+			LEFT_Hip.set_state = swId;
+			LEFT_Hip.motor_Trapezoidal_speed = spId;
+			memcpy(&(LEFT_Hip.motor_acceleration), RxMessage.Data, 2);
+			memcpy(&(LEFT_Hip.motor_deceleration), RxMessage.Data, 2);
 			if(DATA[1] != 0x88888888)
-				RIGHT_Hip.motor_position  = DATA[1];			
+				LEFT_Hip.motor_position = DATA[1];			
 		}
-		else if(msgId == MII_MSG_COMMON_3)				//第三帧：左舵机1、2，右舵机1、2     dirtionID_ndoeID_msgID   00 0010 01010 = 0x4B
+		else if(msgId == MII_MSG_COMMON_3)				
+		{
+			/*
+			第三帧，0x12c0000 断电  0x12d0000 上电  0x12e0000 清除报警
+			*/
+			Flag_MotorChange = 1;
+			nodeStatus = 1;
+			
+			RIGHT_Knee.set_state = swId;
+			RIGHT_Knee.motor_Trapezoidal_speed = spId;
+			memcpy(&(RIGHT_Knee.motor_acceleration), RxMessage.Data, 2);
+			memcpy(&(RIGHT_Knee.motor_deceleration), RxMessage.Data, 2);
+			if(DATA[1] != 0x88888888)
+				RIGHT_Knee.motor_position = DATA[1];	
+		}
+		else if(msgId == MII_MSG_COMMON_4)        
+		{
+			/*
+			第四帧，0x1300000 断电  0x1310000 上电  0x1320000 清除报警
+			*/
+			Flag_MotorChange = 1;
+			nodeStatus = 1;
+			
+			RIGHT_Hip.set_state = swId;
+			RIGHT_Hip.motor_Trapezoidal_speed = spId;
+			memcpy(&(RIGHT_Hip.motor_acceleration), RxMessage.Data, 2);
+			memcpy(&(RIGHT_Hip.motor_deceleration), RxMessage.Data, 2);
+			if(DATA[1] != 0x88888888)
+				RIGHT_Hip.motor_position = DATA[1];	
+		}
+		else if(msgId == MII_MSG_COMMON_5)
+		{
+			/*
+			第五帧，0x1340000
+			*/
+			nodeStatus = 1;
+			memcpy(PWMVAL,RxMessage.Data,8);
+			PWMVAL[4] = spId;
+		}
+		else if(msgId == MII_MSG_COMMON_6)        
 		{
 			nodeStatus = 1;
-			memcpy(PWMVAL,RxMessage.Data,8);					//内存拷贝 第二帧只完成前4个舵机的控制指令 即每个8位
+			
 		}
-		else if(msgId == MII_MSG_COMMON_4)        //第四帧：头部舵机               0x4c
-		{
-			nodeStatus = 1;
-			memcpy(&PWMVAL[4], RxMessage.Data, 2);
-		}
+		/*
 		else if(msgId == MII_MSG_COMMON_5)        //第五帧：电机梯形、加减速度   0x4d
 		{
 			//Flag_MotorChange = 1;
@@ -283,7 +309,7 @@ void CAN1_RX0_IRQHandler(void)
 			memcpy(&(RIGHT_Hip.motor_acceleration), &RxMessage.Data[4], 2);
 			memcpy(&(RIGHT_Hip.motor_deceleration), &RxMessage.Data[6], 2);
 		}
-		
+		*/
 		else
 		{
 			nodeStatus = 0;

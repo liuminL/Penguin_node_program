@@ -355,12 +355,13 @@ ARM Macro Assembler    Page 6
               00000000 
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
-ork --depend=..\obj\os_cpu_a.d -o..\obj\os_cpu_a.o -I"C:\Users\Administrator\De
-sktop\½Úµã°å³ÌÐò\penguin robot\Project\RTE" -If:\Keil_v5\ARM\PACK\Keil\STM32F1x
-x_DFP\1.0.5\Device\Include -If:\Keil_v5\ARM\CMSIS\Include --predefine="__MICROL
-IB SETA 1" --predefine="__UVISION_VERSION SETA 514" --predefine="STM32F10X_CL S
-ETA 1" --list=.\listings\os_cpu_a.lst ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M3\G
-eneric\RealView\os_cpu_a.s
+ork --depend=..\obj\os_cpu_a.d -o..\obj\os_cpu_a.o -I"E:\Laboratory\Penguin pro
+ject\node program\Penguin_node_program\penguin robot\Project\RTE" -IC:\Keil_v5\
+ARM\PACK\Keil\STM32F1xx_DFP\2.2.0 -IC:\Keil_v5\ARM\CMSIS\Include -IC:\Keil_v5\A
+RM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include --predefine="__MICROLIB SETA 1"
+ --predefine="__UVISION_VERSION SETA 514" --predefine="STM32F10X_CL SETA 1" --l
+ist=.\listings\os_cpu_a.lst ..\UCOSIII\uCOS-III\Ports\ARM-Cortex-M3\Generic\Rea
+lView\os_cpu_a.s
 
 
 

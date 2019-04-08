@@ -769,9 +769,9 @@ void CAN_BLDC_SpeedMod(unsigned char Number, long Speed, long acceleration, long
 			return ;
 		
 		tx_message.Data[0] = 0x23;
-    tx_message.Data[1] = 0x7B;
-    tx_message.Data[2] = 0x60;
-    tx_message.Data[3] = 0x00;
+    tx_message.Data[1] = 0xF0;
+    tx_message.Data[2] = 0x2F;
+    tx_message.Data[3] = 0x09;
     tx_message.Data[4] = (unsigned char)(Speed&0xff);
     tx_message.Data[5] = (unsigned char)((Speed>>8)&0xff);
     tx_message.Data[6] = (unsigned char)((Speed>>16)&0xff);

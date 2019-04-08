@@ -278,6 +278,7 @@ void CAN1_RX0_IRQHandler(void)
 		else if(msgId == MII_MSG_COMMON_7)
 		{
 			nodeStatus = 1;
+			Flag_MotorChange = 1;
 			if(RxMessage.Data[0] != 0x88 && RxMessage.Data[1] != 0x88)
 			{
 				LEFT_Knee.init_flag = 0;

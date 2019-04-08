@@ -3,7 +3,7 @@
 <title>Static Call Graph - [..\OBJ\Template.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image ..\OBJ\Template.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050106: Last Updated: Sun Apr 07 00:49:11 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050106: Last Updated: Mon Apr 08 18:23:49 2019
 <BR><P>
 <H3>Maximum Stack Usage =        216 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -501,8 +501,8 @@ Global Symbols
 <P><STRONG><a name="[4]"></a>BusFault_Handler</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_it.o(i.BusFault_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_cl.o(RESET)
 </UL>
-<P><STRONG><a name="[1e]"></a>CAN1_RX0_IRQHandler</STRONG> (Thumb, 322 bytes, Stack size 56 bytes, can.o(i.CAN1_RX0_IRQHandler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 196 + Unknown Stack Size
+<P><STRONG><a name="[1e]"></a>CAN1_RX0_IRQHandler</STRONG> (Thumb, 426 bytes, Stack size 48 bytes, can.o(i.CAN1_RX0_IRQHandler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 188 + Unknown Stack Size
 <LI>Call Chain = CAN1_RX0_IRQHandler &rArr; OSSemPend &rArr; OS_Pend &rArr; OS_TaskBlock &rArr; OS_TickListInsert
 </UL>
 <BR>[Calls]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Receive
@@ -524,58 +524,45 @@ Global Symbols
 <LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_CAN_BLDC_MOTOR_STATE
 <LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_Delay_Us
 </UL>
-<BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_RePositionMod
-<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_ResetMod
+<BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_VelocityMod
+<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_ResetMod
 </UL>
 
-<P><STRONG><a name="[64]"></a>CAN_BLDC_RePositionMod</STRONG> (Thumb, 394 bytes, Stack size 56 bytes, driver2.o(i.CAN_BLDC_RePositionMod))
-<BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = CAN_BLDC_RePositionMod &rArr; CAN_BLDC_ResetMod &rArr; CAN_BLDC_Control &rArr; CAN_Transmit
-</UL>
-<BR>[Calls]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Transmit
-<LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_decelerationSet
-<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_accelerationSet
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_Trapezoidal_speed
-<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_ResetMod
-<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_Control
-<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_Delay_Us
-</UL>
-<BR>[Called By]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;can2_task
-</UL>
-
-<P><STRONG><a name="[67]"></a>CAN_BLDC_ResetMod</STRONG> (Thumb, 118 bytes, Stack size 40 bytes, driver2.o(i.CAN_BLDC_ResetMod))
+<P><STRONG><a name="[64]"></a>CAN_BLDC_ResetMod</STRONG> (Thumb, 118 bytes, Stack size 40 bytes, driver2.o(i.CAN_BLDC_ResetMod))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = CAN_BLDC_ResetMod &rArr; CAN_BLDC_Control &rArr; CAN_Transmit
 </UL>
 <BR>[Calls]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Transmit
 <LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_Control
 </UL>
-<BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_RePositionMod
+<BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_VelocityMod
 </UL>
 
-<P><STRONG><a name="[68]"></a>CAN_BLDC_Trapezoidal_speed</STRONG> (Thumb, 154 bytes, Stack size 40 bytes, driver2.o(i.CAN_BLDC_Trapezoidal_speed))
-<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = CAN_BLDC_Trapezoidal_speed &rArr; CAN_Transmit
+<P><STRONG><a name="[65]"></a>CAN_BLDC_SpeedMod</STRONG> (Thumb, 180 bytes, Stack size 48 bytes, driver2.o(i.CAN_BLDC_SpeedMod))
+<BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = CAN_BLDC_SpeedMod &rArr; init_VelocityMod &rArr; CAN_BLDC_ResetMod &rArr; CAN_BLDC_Control &rArr; CAN_Transmit
 </UL>
 <BR>[Calls]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Transmit
+<LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_VelocityMod
 <LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_Delay_Us
 </UL>
-<BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_RePositionMod
+<BR>[Called By]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;can2_task
 </UL>
 
-<P><STRONG><a name="[65]"></a>CAN_BLDC_accelerationSet</STRONG> (Thumb, 154 bytes, Stack size 40 bytes, driver2.o(i.CAN_BLDC_accelerationSet))
+<P><STRONG><a name="[67]"></a>CAN_BLDC_accelerationSet</STRONG> (Thumb, 154 bytes, Stack size 40 bytes, driver2.o(i.CAN_BLDC_accelerationSet))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = CAN_BLDC_accelerationSet &rArr; CAN_Transmit
 </UL>
 <BR>[Calls]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Transmit
 <LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_Delay_Us
 </UL>
-<BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_RePositionMod
+<BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_VelocityMod
 </UL>
 
-<P><STRONG><a name="[66]"></a>CAN_BLDC_decelerationSet</STRONG> (Thumb, 154 bytes, Stack size 40 bytes, driver2.o(i.CAN_BLDC_decelerationSet))
+<P><STRONG><a name="[68]"></a>CAN_BLDC_decelerationSet</STRONG> (Thumb, 154 bytes, Stack size 40 bytes, driver2.o(i.CAN_BLDC_decelerationSet))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = CAN_BLDC_decelerationSet &rArr; CAN_Transmit
 </UL>
 <BR>[Calls]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Transmit
 <LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_Delay_Us
 </UL>
-<BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_RePositionMod
+<BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_VelocityMod
 </UL>
 
 <P><STRONG><a name="[f5]"></a>CAN_FilterInit</STRONG> (Thumb, 258 bytes, Stack size 8 bytes, stm32f10x_can.o(i.CAN_FilterInit))
@@ -607,12 +594,11 @@ Global Symbols
 <P><STRONG><a name="[61]"></a>CAN_Transmit</STRONG> (Thumb, 294 bytes, Stack size 8 bytes, stm32f10x_can.o(i.CAN_Transmit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = CAN_Transmit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_RePositionMod
+<BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_SpeedMod
 <LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;can1SendMsg
-<LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_decelerationSet
-<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_accelerationSet
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_Trapezoidal_speed
-<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_ResetMod
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_decelerationSet
+<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_accelerationSet
+<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_ResetMod
 <LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_Control
 </UL>
 
@@ -2200,11 +2186,11 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[53]"></a>can2_task</STRONG> (Thumb, 144 bytes, Stack size 16 bytes, can.o(i.can2_task))
-<BR><BR>[Stack]<UL><LI>Max Depth = 160 + Unknown Stack Size
-<LI>Call Chain = can2_task &rArr; CAN_BLDC_RePositionMod &rArr; CAN_BLDC_ResetMod &rArr; CAN_BLDC_Control &rArr; CAN_Transmit
+<P><STRONG><a name="[53]"></a>can2_task</STRONG> (Thumb, 96 bytes, Stack size 16 bytes, can.o(i.can2_task))
+<BR><BR>[Stack]<UL><LI>Max Depth = 168 + Unknown Stack Size
+<LI>Call Chain = can2_task &rArr; CAN_BLDC_SpeedMod &rArr; init_VelocityMod &rArr; CAN_BLDC_ResetMod &rArr; CAN_BLDC_Control &rArr; CAN_Transmit
 </UL>
-<BR>[Calls]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_RePositionMod
+<BR>[Calls]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_SpeedMod
 <LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTimeDlyHMSM
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> main.o(i.start_task)
@@ -2215,6 +2201,17 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_CLKSourceConfig
 </UL>
 <BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[66]"></a>init_VelocityMod</STRONG> (Thumb, 414 bytes, Stack size 16 bytes, driver2.o(i.init_VelocityMod))
+<BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = init_VelocityMod &rArr; CAN_BLDC_ResetMod &rArr; CAN_BLDC_Control &rArr; CAN_Transmit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_decelerationSet
+<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_accelerationSet
+<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_ResetMod
+<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_Control
+</UL>
+<BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_SpeedMod
 </UL>
 
 <P><STRONG><a name="[56]"></a>led_task</STRONG> (Thumb, 42 bytes, Stack size 16 bytes, led.o(i.led_task))
@@ -2340,10 +2337,9 @@ Local Symbols
 <P><STRONG><a name="[62]"></a>CAN_BLDC_Delay_Us</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, driver2.o(i.CAN_BLDC_Delay_Us))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = CAN_BLDC_Delay_Us
 </UL>
-<BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_RePositionMod
-<LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_decelerationSet
-<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_accelerationSet
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_Trapezoidal_speed
+<BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_SpeedMod
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_decelerationSet
+<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_accelerationSet
 <LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_BLDC_Control
 </UL>
 

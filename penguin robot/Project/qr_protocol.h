@@ -139,6 +139,7 @@ THE COMMON MESSAGE USING BY COMMAND IN JOINT SPACE
 #define MII_MSG_COMMON_5          (015u)
 ///! The head server position command
 #define MII_MSG_COMMON_6          (016u)
+#define MII_MSG_COMMON_7          (017u)
 
 /*
 THE MOTOR MESSAGE USING BY COMMAND IN MOTOR SPACE

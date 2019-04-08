@@ -32,5 +32,6 @@ void CAN_BLDC_Trapezoidal_speed(unsigned char Number, long speed);
 void CAN_BLDC_Stop(unsigned char Number, long flag);
 void CAN_BLDC_AbPositionMod(unsigned char Number, long Temp_Position);
 void CAN_BLDC_RePositionMod(unsigned char Number, long Temp_Position, long acceleration, long deceleration, unsigned char set_state, long speed);
-
+void CAN_BLDC_SpeedMod(unsigned char Number, long Speed, long acceleration, long deceleration);
+int init_VelocityMod(unsigned char Number, long acceleration, long deceleration);
 #endif

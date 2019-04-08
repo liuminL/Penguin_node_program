@@ -11,7 +11,9 @@ static void CAN_BLDC_Delay_Us(unsigned int t)
 		while(a--);
 	}
 }
-
+/*
+	模式设置
+*/
 void CAN_BLDC_ResetMod(unsigned char Number, unsigned char Mode)
 {
 		CanTxMsg tx_message;
@@ -616,6 +618,167 @@ void CAN_BLDC_RePositionMod(unsigned char Number, long Temp_Position, long accel
     CAN_Transmit(CAN2,&tx_message);
     
 		
+    CAN_Time_Out2 = 0;
+    while(can_tx_success_flag2 == 0)
+    {
+				CAN_BLDC_Delay_Us(1);
+        CAN_Time_Out2++;
+        if(CAN_Time_Out2>100)
+        {
+						break;
+        }
+    }
+}
+
+/*the init of VelocityMod*/
+int init_VelocityMod(unsigned char Number, long acceleration, long deceleration)
+{
+		switch(Number)
+		{
+			case 0x1:
+			{
+					if(LEFT_Hip.init_flag == 0)
+					{
+						CAN_BLDC_accelerationSet(Number, acceleration);           //set acceleration
+						CAN_BLDC_decelerationSet(Number, deceleration);           //set deceleration
+						CAN_BLDC_ResetMod(Number, BLDC_Velocity1_Mode);           //set Velocity-Mode
+						if(LEFT_Hip.set_state == 0x0)
+						{
+							CAN_BLDC_Control(Number, BLDC_ControlWord_Off);
+						}		
+						else if (LEFT_Hip.set_state == 0x1)
+						{	
+							CAN_BLDC_Control(Number, BLDC_ReControlWord_On);
+						}
+						else if (LEFT_Hip.set_state == 0x2)
+						{	
+							CAN_BLDC_Control(Number, BLDC_ControlWord_AlarmClean);    //Let the motor connect to power
+						}
+						else 
+							return 0;	
+						
+						LEFT_Hip.init_flag = 1;//初始化完成标志
+					}
+					break;
+			}
+			case 0x2:
+			{
+					if(LEFT_Knee.init_flag == 0)
+					{
+						CAN_BLDC_accelerationSet(Number, acceleration);           //set acceleration
+						CAN_BLDC_decelerationSet(Number, deceleration);           //set deceleration
+						CAN_BLDC_ResetMod(Number, BLDC_Velocity1_Mode);           //set Velocity-Mode
+						if(LEFT_Knee.set_state == 0x0)
+						{
+							CAN_BLDC_Control(Number, BLDC_ControlWord_Off);
+						}		
+						else if (LEFT_Knee.set_state == 0x1)
+						{	
+							CAN_BLDC_Control(Number, BLDC_ReControlWord_On);
+						}
+						else if (LEFT_Knee.set_state == 0x2)
+						{	
+							CAN_BLDC_Control(Number, BLDC_ControlWord_AlarmClean);    //Let the motor connect to power
+						}
+						else 
+							return 0;	
+						
+						LEFT_Knee.init_flag = 1;//初始化完成标志
+					}
+					break;
+			}
+			case 0x3:
+			{
+					if(RIGHT_Hip.init_flag == 0)
+					{
+						CAN_BLDC_accelerationSet(Number, acceleration);           //set acceleration
+						CAN_BLDC_decelerationSet(Number, deceleration);           //set deceleration
+						CAN_BLDC_ResetMod(Number, BLDC_Velocity1_Mode);           //set Velocity-Mode
+						if(RIGHT_Hip.set_state == 0x0)
+						{
+							CAN_BLDC_Control(Number, BLDC_ControlWord_Off);
+						}		
+						else if (RIGHT_Hip.set_state == 0x1)
+						{	
+							CAN_BLDC_Control(Number, BLDC_ReControlWord_On);
+						}
+						else if (RIGHT_Hip.set_state == 0x2)
+						{	
+							CAN_BLDC_Control(Number, BLDC_ControlWord_AlarmClean);    //Let the motor connect to power
+						}
+						else 
+							return 0;	
+						
+						RIGHT_Hip.init_flag = 1;//初始化完成标志
+					}
+					break;
+			}
+			case 0x4:
+			{
+					if(RIGHT_Knee.init_flag == 0)
+					{
+						CAN_BLDC_accelerationSet(Number, acceleration);           //set acceleration
+						CAN_BLDC_decelerationSet(Number, deceleration);           //set deceleration
+						CAN_BLDC_ResetMod(Number, BLDC_Velocity1_Mode);           //set Velocity-Mode
+						if(RIGHT_Knee.set_state == 0x0)
+						{
+							CAN_BLDC_Control(Number, BLDC_ControlWord_Off);
+						}		
+						else if (RIGHT_Knee.set_state == 0x1)
+						{	
+							CAN_BLDC_Control(Number, BLDC_ReControlWord_On);							
+						}
+						else if (RIGHT_Knee.set_state == 0x2)
+						{	
+							CAN_BLDC_Control(Number, BLDC_ControlWord_AlarmClean);    //Let the motor connect to power
+						}
+						else 
+							return 0;	
+						
+						LEFT_Knee.init_flag = 1;//初始化完成标志
+					}
+					break;
+			}
+			default: return 0;
+		}
+		return 1;
+}
+/*
+速度模式下的控制
+*/
+void CAN_BLDC_SpeedMod(unsigned char Number, long Speed, long acceleration, long deceleration)
+{
+		CanTxMsg tx_message;
+		unsigned short can_id = 0x600;
+    tx_message.IDE = CAN_ID_STD;    //标准帧
+    tx_message.RTR = CAN_RTR_DATA;  //数据帧
+    tx_message.DLC = 0x08;          //帧长度为8
+    
+		//4 BLDC
+    if(Number<5 && Number>0)
+    {
+        can_id |= Number;
+    }
+    else
+    {
+        return;
+    }
+		tx_message.StdId = can_id;      //帧ID为传入参数的CAN_ID
+		
+		if(init_VelocityMod(Number, acceleration, deceleration) == 0)
+			return ;
+		
+		tx_message.Data[0] = 0x23;
+    tx_message.Data[1] = 0x7B;
+    tx_message.Data[2] = 0x60;
+    tx_message.Data[3] = 0x00;
+    tx_message.Data[4] = (unsigned char)(Speed&0xff);
+    tx_message.Data[5] = (unsigned char)((Speed>>8)&0xff);
+    tx_message.Data[6] = (unsigned char)((Speed>>16)&0xff);
+    tx_message.Data[7] = (unsigned char)((Speed>>24)&0xff);
+		
+		can_tx_success_flag2 = 0;
+    CAN_Transmit(CAN2,&tx_message);
     CAN_Time_Out2 = 0;
     while(can_tx_success_flag2 == 0)
     {

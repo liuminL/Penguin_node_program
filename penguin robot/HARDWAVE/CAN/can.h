@@ -21,11 +21,14 @@ struct Motor
 {
 	char state; 
 	char set_state;
-	long motor_position;
+	char init_flag;
 	long motor_acceleration;
 	long motor_deceleration;
+	/*positionMod*/
+	long motor_position;
 	long motor_Trapezoidal_speed;
-	char init_flag;
+	/*SpeedMod*/
+	long Speed;
 };
 #endif
 

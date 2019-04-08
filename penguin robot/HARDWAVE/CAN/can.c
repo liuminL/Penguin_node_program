@@ -29,14 +29,18 @@ struct Motor
 {
 	char state; 
 	char set_state;
-	long motor_position;
+	char init_flag;
 	long motor_acceleration;
 	long motor_deceleration;
+	//positionMod
+	long motor_position;
 	long motor_Trapezoidal_speed;
-	char init_flag;
+	//SpeedMod
+	long Speed;
 };
 */
-struct Motor LEFT_Knee={0, 0, 0, 0x14, 0x28, 0xf00a, 0}, LEFT_Hip={0, 0, 0, 0x14, 0x28, 0xf00a, 0}, RIGHT_Hip={0, 0, 0, 0x14, 0x28, 0xf00a, 0}, RIGHT_Knee={0, 0, 0, 0x14, 0x28, 0xf00a, 0};
+struct Motor LEFT_Knee={0, 0, 0, 0x14, 0x28, 0, 0, 0 }, LEFT_Hip={0, 0, 0, 0x14, 0x28, 0, 0, 0}, 
+				RIGHT_Hip={0, 0, 0, 0x14, 0x28, 0, 0, 0}, RIGHT_Knee={0, 0, 0, 0x14, 0x28, 0, 0, 0};
 //long LEFT_Knee = 0, LEFT_Hip = 0, RIGHT_Hip = 0, RIGHT_Knee = 0;
 uint8_t feedback[8];
 /*******************************************************************************
@@ -205,15 +209,10 @@ void CAN1_RX0_IRQHandler(void)
 	int32_t DATA[2];
 	uint16_t nodeId = 0;
 	u8 msgId = 0;
-	u8 swId = 0;
-	u16 spId = 0;
 	CAN_Receive(CAN1, 0, &RxMessage);
 	memcpy(DATA, RxMessage.Data, 8);
-	nodeId = MII_MSG_SPLIT_EXNODEID(RxMessage.ExtId);
-	msgId	 = MII_MSG_SPLIT_EXMSGID(RxMessage.ExtId);			//获取消息ID
-	swId = MII_MSG_SPLIT_EXSWID(RxMessage.ExtId);
-	spId = MII_MSG_SPLIT_EXSPID(RxMessage.ExtId);
-	
+	nodeId = MII_MSG_SPLIT_NODEID(RxMessage.StdId);
+	msgId	 = MII_MSG_SPLIT_MSGID(RxMessage.StdId);			//获取消息ID	
 	if(nodeId == FILTER_ID )
 	{
 		if(msgId == MII_MSG_COMMON_1)							
@@ -222,10 +221,7 @@ void CAN1_RX0_IRQHandler(void)
 			第一帧，0x1240000 断电  0x1250000 上电  0x1260000 清除报警
 			*/
 			Flag_MotorChange = 1;
-			nodeStatus = 1;
-			
-			LEFT_Knee.set_state = swId;
-			LEFT_Knee.motor_Trapezoidal_speed = spId;
+			nodeStatus = 1;			
 			memcpy(&(LEFT_Knee.motor_acceleration), RxMessage.Data, 2);
 			memcpy(&(LEFT_Knee.motor_deceleration), RxMessage.Data, 2);
 			if(DATA[1] != 0x88888888)
@@ -237,10 +233,7 @@ void CAN1_RX0_IRQHandler(void)
 			第二帧，0x1280000 断电  0x1290000 上电  0x12a0000 清除报警
 			*/
 			Flag_MotorChange = 1;
-			nodeStatus = 1;
-			
-			LEFT_Hip.set_state = swId;
-			LEFT_Hip.motor_Trapezoidal_speed = spId;
+			nodeStatus = 1;			
 			memcpy(&(LEFT_Hip.motor_acceleration), RxMessage.Data, 2);
 			memcpy(&(LEFT_Hip.motor_deceleration), RxMessage.Data, 2);
 			if(DATA[1] != 0x88888888)
@@ -253,9 +246,6 @@ void CAN1_RX0_IRQHandler(void)
 			*/
 			Flag_MotorChange = 1;
 			nodeStatus = 1;
-			
-			RIGHT_Knee.set_state = swId;
-			RIGHT_Knee.motor_Trapezoidal_speed = spId;
 			memcpy(&(RIGHT_Knee.motor_acceleration), RxMessage.Data, 2);
 			memcpy(&(RIGHT_Knee.motor_deceleration), RxMessage.Data, 2);
 			if(DATA[1] != 0x88888888)
@@ -268,9 +258,6 @@ void CAN1_RX0_IRQHandler(void)
 			*/
 			Flag_MotorChange = 1;
 			nodeStatus = 1;
-			
-			RIGHT_Hip.set_state = swId;
-			RIGHT_Hip.motor_Trapezoidal_speed = spId;
 			memcpy(&(RIGHT_Hip.motor_acceleration), RxMessage.Data, 2);
 			memcpy(&(RIGHT_Hip.motor_deceleration), RxMessage.Data, 2);
 			if(DATA[1] != 0x88888888)
@@ -283,12 +270,34 @@ void CAN1_RX0_IRQHandler(void)
 			*/
 			nodeStatus = 1;
 			memcpy(PWMVAL,RxMessage.Data,8);
-			PWMVAL[4] = spId;
 		}
 		else if(msgId == MII_MSG_COMMON_6)        
 		{
+			nodeStatus = 1;	
+		}
+		else if(msgId == MII_MSG_COMMON_7)
+		{
 			nodeStatus = 1;
-			
+			if(RxMessage.Data[0] != 0x88 && RxMessage.Data[1] != 0x88)
+			{
+				LEFT_Knee.init_flag = 0;
+				memcpy(&(LEFT_Knee.set_state), RxMessage.Data, 2);
+			}
+			if(RxMessage.Data[2] != 0x88 && RxMessage.Data[3] != 0x88)		
+			{
+				memcpy(&(LEFT_Hip.set_state), &RxMessage.Data[2], 2);
+				LEFT_Hip.init_flag = 0;
+			}
+			if(RxMessage.Data[4] != 0x88 && RxMessage.Data[5] != 0x88)			
+			{
+				memcpy(&(RIGHT_Knee.set_state), &RxMessage.Data[4], 2);
+				RIGHT_Knee.init_flag = 0;
+			}
+			if(RxMessage.Data[6] != 0x88 && RxMessage.Data[7] != 0x88)
+			{
+				memcpy(&(RIGHT_Hip.set_state), &RxMessage.Data[6], 2);
+				RIGHT_Hip.init_flag = 0;
+			}
 		}
 		/*
 		else if(msgId == MII_MSG_COMMON_5)        //第五帧：电机梯形、加减速度   0x4d
@@ -487,10 +496,10 @@ void can2_task(void *p_arg)
 	{
 		if(Flag_MotorChange == 1)
 		{
-			CAN_BLDC_RePositionMod(1, LEFT_Hip.motor_position, LEFT_Hip.motor_acceleration, LEFT_Hip.motor_deceleration, LEFT_Hip.set_state, LEFT_Hip.motor_Trapezoidal_speed);
-			CAN_BLDC_RePositionMod(2, LEFT_Knee.motor_position, LEFT_Knee.motor_acceleration, LEFT_Knee.motor_deceleration, LEFT_Knee.set_state, LEFT_Knee.motor_Trapezoidal_speed);
-			CAN_BLDC_RePositionMod(3, RIGHT_Hip.motor_position, RIGHT_Hip.motor_acceleration, RIGHT_Hip.motor_deceleration, RIGHT_Hip.set_state, RIGHT_Hip.motor_Trapezoidal_speed);
-			CAN_BLDC_RePositionMod(4, RIGHT_Knee.motor_position, RIGHT_Knee.motor_acceleration, RIGHT_Knee.motor_deceleration, RIGHT_Knee.set_state, RIGHT_Knee.motor_Trapezoidal_speed);			
+			CAN_BLDC_SpeedMod(1, LEFT_Hip.Speed, LEFT_Hip.motor_acceleration, LEFT_Hip.motor_deceleration);
+			CAN_BLDC_SpeedMod(2, LEFT_Knee.Speed, LEFT_Knee.motor_acceleration, LEFT_Knee.motor_deceleration);
+			CAN_BLDC_SpeedMod(3, RIGHT_Hip.Speed, RIGHT_Hip.motor_acceleration, RIGHT_Hip.motor_deceleration);
+			CAN_BLDC_SpeedMod(4, RIGHT_Knee.Speed, RIGHT_Knee.motor_acceleration, RIGHT_Knee.motor_deceleration);			
 			Flag_MotorChange = 0;
 		}
 		OSTimeDlyHMSM(0,0,0,100,OS_OPT_TIME_HMSM_STRICT,&err); //延时,发起任务调度

@@ -3,7 +3,7 @@
 ..\obj\led.o: ..\SYSTEM\sys\sys.h
 ..\obj\led.o: ..\Project\stm32f10x.h
 ..\obj\led.o: ..\CORE\core_cm3.h
-..\obj\led.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\led.o: f:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\led.o: ..\Project\system_stm32f10x.h
 ..\obj\led.o: ..\Project\stm32f10x_conf.h
 ..\obj\led.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h
@@ -36,11 +36,11 @@
 ..\obj\led.o: ..\HARDWAVE\CAN\can.h
 ..\obj\led.o: ..\Project\user.h
 ..\obj\led.o: ..\SYSTEM\usart\usart.h
-..\obj\led.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\led.o: f:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\led.o: ..\UCOSIII\UCOS_CONFIG\includes.h
-..\obj\led.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
-..\obj\led.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-..\obj\led.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+..\obj\led.o: f:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+..\obj\led.o: f:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\led.o: f:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 ..\obj\led.o: ..\UCOSIII\uC-CPU\ARM-Cortex-M3\RealView\cpu.h
 ..\obj\led.o: ..\UCOSIII\uC-CPU\cpu_def.h
 ..\obj\led.o: ..\UCOSIII\UCOS_CONFIG\cpu_cfg.h

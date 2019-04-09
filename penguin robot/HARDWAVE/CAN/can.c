@@ -225,7 +225,7 @@ void CAN1_RX0_IRQHandler(void)
 			memcpy(&(LEFT_Knee.motor_acceleration), RxMessage.Data, 2);
 			memcpy(&(LEFT_Knee.motor_deceleration), RxMessage.Data, 2);
 			if(DATA[1] != 0x88888888)
-				LEFT_Knee.motor_position = DATA[1];			
+				LEFT_Knee.Speed = DATA[1];			
 		}
 		else if(msgId == MII_MSG_COMMON_2)        
 		{
@@ -237,7 +237,7 @@ void CAN1_RX0_IRQHandler(void)
 			memcpy(&(LEFT_Hip.motor_acceleration), RxMessage.Data, 2);
 			memcpy(&(LEFT_Hip.motor_deceleration), RxMessage.Data, 2);
 			if(DATA[1] != 0x88888888)
-				LEFT_Hip.motor_position = DATA[1];			
+				LEFT_Hip.Speed = DATA[1];			
 		}
 		else if(msgId == MII_MSG_COMMON_3)				
 		{
@@ -249,7 +249,7 @@ void CAN1_RX0_IRQHandler(void)
 			memcpy(&(RIGHT_Knee.motor_acceleration), RxMessage.Data, 2);
 			memcpy(&(RIGHT_Knee.motor_deceleration), RxMessage.Data, 2);
 			if(DATA[1] != 0x88888888)
-				RIGHT_Knee.motor_position = DATA[1];	
+				RIGHT_Knee.Speed = DATA[1];	
 		}
 		else if(msgId == MII_MSG_COMMON_4)        
 		{
@@ -261,7 +261,7 @@ void CAN1_RX0_IRQHandler(void)
 			memcpy(&(RIGHT_Hip.motor_acceleration), RxMessage.Data, 2);
 			memcpy(&(RIGHT_Hip.motor_deceleration), RxMessage.Data, 2);
 			if(DATA[1] != 0x88888888)
-				RIGHT_Hip.motor_position = DATA[1];	
+				RIGHT_Hip.Speed = DATA[1];	
 		}
 		else if(msgId == MII_MSG_COMMON_5)
 		{

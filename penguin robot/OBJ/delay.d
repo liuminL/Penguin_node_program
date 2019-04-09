@@ -3,7 +3,7 @@
 ..\obj\delay.o: ..\SYSTEM\sys\sys.h
 ..\obj\delay.o: ..\Project\stm32f10x.h
 ..\obj\delay.o: ..\CORE\core_cm3.h
-..\obj\delay.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\delay.o: f:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\delay.o: ..\Project\system_stm32f10x.h
 ..\obj\delay.o: ..\Project\stm32f10x_conf.h
 ..\obj\delay.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h
@@ -31,10 +31,10 @@
 ..\obj\delay.o: ..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h
 ..\obj\delay.o: ..\STM32F10x_FWLib\inc\misc.h
 ..\obj\delay.o: ..\UCOSIII\UCOS_CONFIG\includes.h
-..\obj\delay.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
-..\obj\delay.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-..\obj\delay.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-..\obj\delay.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+..\obj\delay.o: f:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+..\obj\delay.o: f:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\delay.o: f:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\delay.o: f:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 ..\obj\delay.o: ..\UCOSIII\uC-CPU\ARM-Cortex-M3\RealView\cpu.h
 ..\obj\delay.o: ..\UCOSIII\uC-CPU\cpu_def.h
 ..\obj\delay.o: ..\UCOSIII\UCOS_CONFIG\cpu_cfg.h

@@ -81,23 +81,23 @@
       <Books>
         <Book>
           <Number>0</Number>
-          <Title>Quick Start Guide (MCBSTM32C)</Title>
-          <Path>C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Boards/Keil/MCBSTM32C/Documentation/STM32C_QSG.pdf</Path>
+          <Title>Base Board Schematics (MCBSTM32C)</Title>
+          <Path>f:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Documents\mcbstm32c-base-board-schematics.pdf</Path>
         </Book>
         <Book>
           <Number>1</Number>
-          <Title>Base Board Schematics (MCBSTM32C)</Title>
-          <Path>C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Boards/Keil/MCBSTM32C/Documentation/mcbstm32c-base-board-schematics.pdf</Path>
+          <Title>Display Board Schematics (MCBSTM32C)</Title>
+          <Path>f:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Documents\mcbstm32c-display-board-schematics.pdf</Path>
         </Book>
         <Book>
           <Number>2</Number>
-          <Title>Display Board Schematics (MCBSTM32C)</Title>
-          <Path>C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Boards/Keil/MCBSTM32C/Documentation/mcbstm32c-display-board-schematics.pdf</Path>
+          <Title>User Manual (MCBSTM32C)</Title>
+          <Path>f:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Documents\mcbstm32c.chm</Path>
         </Book>
         <Book>
           <Number>3</Number>
-          <Title>User Manual (MCBSTM32C)</Title>
-          <Path>C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Boards/Keil/MCBSTM32C/Documentation/mcbstm32c.chm</Path>
+          <Title>Quick Start (MCBSTM32C)</Title>
+          <Path>f:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Documents\mcbstm32c_quickstart.pdf</Path>
         </Book>
         <Book>
           <Number>4</Number>
@@ -143,6 +143,11 @@
       <TargetDriverDllRegistry>
         <SetRegEntry>
           <Number>0</Number>
+          <Key>DLGUARM</Key>
+          <Name></Name>
+        </SetRegEntry>
+        <SetRegEntry>
+          <Number>0</Number>
           <Key>DLGDARM</Key>
           <Name>(1010=-1,-1,-1,-1,0)(1007=-1,-1,-1,-1,0)(1008=-1,-1,-1,-1,0)(1009=-1,-1,-1,-1,0)</Name>
         </SetRegEntry>
@@ -176,9 +181,25 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>220</LineNumber>
+          <LineNumber>679</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134218974</Address>
+          <Address>134245846</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>C:\Users\Administrator\Desktop\鑺傜偣鏉跨▼搴?penguin robot\Project\driver2.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression></Expression>
+        </Bp>
+        <Bp>
+          <Number>1</Number>
+          <Type>0</Type>
+          <LineNumber>500</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134245446</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -187,7 +208,55 @@
           <BreakIfRCount>1</BreakIfRCount>
           <Filename>C:\Users\Administrator\Desktop\鑺傜偣鏉跨▼搴?penguin robot\HARDWAVE\CAN\can.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression></Expression>
+          <Expression>\\Template\../HARDWAVE/CAN/can.c\500</Expression>
+        </Bp>
+        <Bp>
+          <Number>2</Number>
+          <Type>0</Type>
+          <LineNumber>652</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134245746</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>C:\Users\Administrator\Desktop\鑺傜偣鏉跨▼搴?penguin robot\Project\driver2.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\Template\driver2.c\652</Expression>
+        </Bp>
+        <Bp>
+          <Number>3</Number>
+          <Type>0</Type>
+          <LineNumber>706</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134245950</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>C:\Users\Administrator\Desktop\鑺傜偣鏉跨▼搴?penguin robot\Project\driver2.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\Template\driver2.c\706</Expression>
+        </Bp>
+        <Bp>
+          <Number>4</Number>
+          <Type>0</Type>
+          <LineNumber>733</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134246050</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>C:\Users\Administrator\Desktop\鑺傜偣鏉跨▼搴?penguin robot\Project\driver2.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\Template\driver2.c\733</Expression>
         </Bp>
       </Breakpoint>
       <WatchWindow1>
@@ -318,7 +387,7 @@
       <DebugFlag>
         <trace>0</trace>
         <periodic>1</periodic>
-        <aLwin>1</aLwin>
+        <aLwin>0</aLwin>
         <aCover>0</aCover>
         <aSer1>0</aSer1>
         <aSer2>0</aSer2>

@@ -1,7 +1,7 @@
 ..\obj\bsp.o: ..\UCOSIII\UCOS_BSP\bsp.c
 ..\obj\bsp.o: ..\UCOSIII\UCOS_BSP\bsp.h
-..\obj\bsp.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-..\obj\bsp.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+..\obj\bsp.o: f:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\bsp.o: f:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 ..\obj\bsp.o: ..\UCOSIII\uC-CPU\ARM-Cortex-M3\RealView\cpu.h
 ..\obj\bsp.o: ..\UCOSIII\uC-CPU\cpu_def.h
 ..\obj\bsp.o: ..\UCOSIII\UCOS_CONFIG\cpu_cfg.h
@@ -16,7 +16,7 @@
 ..\obj\bsp.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h
 ..\obj\bsp.o: ..\Project\stm32f10x.h
 ..\obj\bsp.o: ..\CORE\core_cm3.h
-..\obj\bsp.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\bsp.o: f:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\bsp.o: ..\Project\system_stm32f10x.h
 ..\obj\bsp.o: ..\Project\stm32f10x_conf.h
 ..\obj\bsp.o: ..\STM32F10x_FWLib\inc\stm32f10x_bkp.h

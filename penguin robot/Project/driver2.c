@@ -48,6 +48,16 @@ void CAN_BLDC_ResetMod(unsigned char Number, unsigned char Mode)
     can_tx_success_flag2 = 0;
     CAN_Transmit(CAN2,&tx_message);
 		
+		CAN_Time_Out2 = 0;
+		while(can_tx_success_flag2 == 0)
+    {
+				CAN_BLDC_Delay_Us(1);
+        CAN_Time_Out2++;
+        if(CAN_Time_Out2>100)
+        {
+						break;
+        }
+    }
 }
 /*
 读取电机结构体的电机状态
@@ -642,22 +652,23 @@ int init_VelocityMod(unsigned char Number, long acceleration, long deceleration)
 						CAN_BLDC_accelerationSet(Number, acceleration);           //set acceleration
 						CAN_BLDC_decelerationSet(Number, deceleration);           //set deceleration
 						CAN_BLDC_ResetMod(Number, BLDC_Velocity1_Mode);           //set Velocity-Mode
-						if(LEFT_Hip.set_state == 0x0)
+						if(LEFT_Hip.set_state == 0x00)
 						{
 							CAN_BLDC_Control(Number, BLDC_ControlWord_Off);
+							LEFT_Hip.init_flag = 0;
 						}		
-						else if (LEFT_Hip.set_state == 0x1)
+						else if (LEFT_Hip.set_state == 0x01)
 						{	
 							CAN_BLDC_Control(Number, BLDC_ReControlWord_On);
 						}
-						else if (LEFT_Hip.set_state == 0x2)
+						else if (LEFT_Hip.set_state == 0x02)
 						{	
 							CAN_BLDC_Control(Number, BLDC_ControlWord_AlarmClean);    //Let the motor connect to power
 						}
 						else 
 							return 0;	
 						
-						LEFT_Hip.init_flag = 1;//初始化完成标志
+						LEFT_Hip.init_flag = 1;//初始化完成标志 01 00 01 00 01 00 01 00
 					}
 					break;
 			}
@@ -668,15 +679,16 @@ int init_VelocityMod(unsigned char Number, long acceleration, long deceleration)
 						CAN_BLDC_accelerationSet(Number, acceleration);           //set acceleration
 						CAN_BLDC_decelerationSet(Number, deceleration);           //set deceleration
 						CAN_BLDC_ResetMod(Number, BLDC_Velocity1_Mode);           //set Velocity-Mode
-						if(LEFT_Knee.set_state == 0x0)
+						if(LEFT_Knee.set_state == 0x00)
 						{
 							CAN_BLDC_Control(Number, BLDC_ControlWord_Off);
+							LEFT_Knee.init_flag = 0;
 						}		
-						else if (LEFT_Knee.set_state == 0x1)
+						else if (LEFT_Knee.set_state == 0x01)
 						{	
 							CAN_BLDC_Control(Number, BLDC_ReControlWord_On);
 						}
-						else if (LEFT_Knee.set_state == 0x2)
+						else if (LEFT_Knee.set_state == 0x02)
 						{	
 							CAN_BLDC_Control(Number, BLDC_ControlWord_AlarmClean);    //Let the motor connect to power
 						}
@@ -694,15 +706,16 @@ int init_VelocityMod(unsigned char Number, long acceleration, long deceleration)
 						CAN_BLDC_accelerationSet(Number, acceleration);           //set acceleration
 						CAN_BLDC_decelerationSet(Number, deceleration);           //set deceleration
 						CAN_BLDC_ResetMod(Number, BLDC_Velocity1_Mode);           //set Velocity-Mode
-						if(RIGHT_Hip.set_state == 0x0)
+						if(RIGHT_Hip.set_state == 0x00)
 						{
 							CAN_BLDC_Control(Number, BLDC_ControlWord_Off);
+							RIGHT_Hip.init_flag = 0;
 						}		
-						else if (RIGHT_Hip.set_state == 0x1)
+						else if (RIGHT_Hip.set_state == 0x01)
 						{	
 							CAN_BLDC_Control(Number, BLDC_ReControlWord_On);
 						}
-						else if (RIGHT_Hip.set_state == 0x2)
+						else if (RIGHT_Hip.set_state == 0x02)
 						{	
 							CAN_BLDC_Control(Number, BLDC_ControlWord_AlarmClean);    //Let the motor connect to power
 						}
@@ -720,22 +733,23 @@ int init_VelocityMod(unsigned char Number, long acceleration, long deceleration)
 						CAN_BLDC_accelerationSet(Number, acceleration);           //set acceleration
 						CAN_BLDC_decelerationSet(Number, deceleration);           //set deceleration
 						CAN_BLDC_ResetMod(Number, BLDC_Velocity1_Mode);           //set Velocity-Mode
-						if(RIGHT_Knee.set_state == 0x0)
+						if(RIGHT_Knee.set_state == 0x00)
 						{
 							CAN_BLDC_Control(Number, BLDC_ControlWord_Off);
+							RIGHT_Knee.init_flag = 0;
 						}		
-						else if (RIGHT_Knee.set_state == 0x1)
+						else if (RIGHT_Knee.set_state == 0x01)
 						{	
 							CAN_BLDC_Control(Number, BLDC_ReControlWord_On);							
 						}
-						else if (RIGHT_Knee.set_state == 0x2)
+						else if (RIGHT_Knee.set_state == 0x02)
 						{	
 							CAN_BLDC_Control(Number, BLDC_ControlWord_AlarmClean);    //Let the motor connect to power
 						}
 						else 
 							return 0;	
 						
-						LEFT_Knee.init_flag = 1;//初始化完成标志
+						RIGHT_Knee.init_flag = 1;//初始化完成标志
 					}
 					break;
 			}

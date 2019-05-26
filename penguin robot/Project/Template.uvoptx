@@ -81,23 +81,23 @@
       <Books>
         <Book>
           <Number>0</Number>
-          <Title>Base Board Schematics (MCBSTM32C)</Title>
-          <Path>f:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Documents\mcbstm32c-base-board-schematics.pdf</Path>
+          <Title>Quick Start Guide (MCBSTM32C)</Title>
+          <Path>C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Boards/Keil/MCBSTM32C/Documentation/STM32C_QSG.pdf</Path>
         </Book>
         <Book>
           <Number>1</Number>
-          <Title>Display Board Schematics (MCBSTM32C)</Title>
-          <Path>f:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Documents\mcbstm32c-display-board-schematics.pdf</Path>
+          <Title>Base Board Schematics (MCBSTM32C)</Title>
+          <Path>C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Boards/Keil/MCBSTM32C/Documentation/mcbstm32c-base-board-schematics.pdf</Path>
         </Book>
         <Book>
           <Number>2</Number>
-          <Title>User Manual (MCBSTM32C)</Title>
-          <Path>f:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Documents\mcbstm32c.chm</Path>
+          <Title>Display Board Schematics (MCBSTM32C)</Title>
+          <Path>C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Boards/Keil/MCBSTM32C/Documentation/mcbstm32c-display-board-schematics.pdf</Path>
         </Book>
         <Book>
           <Number>3</Number>
-          <Title>Quick Start (MCBSTM32C)</Title>
-          <Path>f:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Documents\mcbstm32c_quickstart.pdf</Path>
+          <Title>User Manual (MCBSTM32C)</Title>
+          <Path>C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Boards/Keil/MCBSTM32C/Documentation/mcbstm32c.chm</Path>
         </Book>
         <Book>
           <Number>4</Number>
@@ -169,7 +169,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>JL2CM3</Key>
-          <Name>-U20090928 -O78 -S0 -A0 -C0 -JU1 -JI127.0.0.1 -JP0 -RST0 -N00("ARM CoreSight SW-DP") -D00(1BA01477) -L00(0) -TO18 -TC10000000 -TP21 -TDS8008 -TDT0 -TDC1F -TIEFFFFFFFF -TIP8 -TB1 -TFE0 -FO15 -FD20000000 -FC1000 -FN1 -FF0STM32F10x_CL.FLM -FS08000000 -FL040000 -FP0($$Device:STM32F105RC$Flash\STM32F10x_CL.FLM)</Name>
+          <Name>-U20090928 -O78 -S5 -A0 -C0 -JU1 -JI127.0.0.1 -JP0 -RST0 -N00("ARM CoreSight SW-DP") -D00(1BA01477) -L00(0) -TO18 -TC10000000 -TP21 -TDS8008 -TDT0 -TDC1F -TIEFFFFFFFF -TIP8 -TB1 -TFE0 -FO15 -FD20000000 -FC1000 -FN1 -FF0STM32F10x_CL.FLM -FS08000000 -FL040000 -FP0($$Device:STM32F105RC$Flash\STM32F10x_CL.FLM)</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -181,82 +181,130 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>679</LineNumber>
+          <LineNumber>136</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134245846</Address>
+          <Address>134243360</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>1</BreakIfRCount>
-          <Filename>C:\Users\Administrator\Desktop\鑺傜偣鏉跨▼搴?penguin robot\Project\driver2.c</Filename>
+          <Filename>.\pwm.c</Filename>
           <ExecCommand></ExecCommand>
           <Expression></Expression>
         </Bp>
         <Bp>
           <Number>1</Number>
           <Type>0</Type>
-          <LineNumber>500</LineNumber>
+          <LineNumber>112</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134245446</Address>
+          <Address>134243656</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>1</BreakIfRCount>
-          <Filename>C:\Users\Administrator\Desktop\鑺傜偣鏉跨▼搴?penguin robot\HARDWAVE\CAN\can.c</Filename>
+          <Filename>.\pwm.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\Template\../HARDWAVE/CAN/can.c\500</Expression>
+          <Expression></Expression>
         </Bp>
         <Bp>
           <Number>2</Number>
           <Type>0</Type>
-          <LineNumber>652</LineNumber>
+          <LineNumber>87</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134245746</Address>
+          <Address>134243552</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>1</BreakIfRCount>
-          <Filename>C:\Users\Administrator\Desktop\鑺傜偣鏉跨▼搴?penguin robot\Project\driver2.c</Filename>
+          <Filename>.\pwm.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\Template\driver2.c\652</Expression>
+          <Expression></Expression>
         </Bp>
         <Bp>
           <Number>3</Number>
           <Type>0</Type>
-          <LineNumber>706</LineNumber>
+          <LineNumber>69</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134245950</Address>
+          <Address>134243518</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>1</BreakIfRCount>
-          <Filename>C:\Users\Administrator\Desktop\鑺傜偣鏉跨▼搴?penguin robot\Project\driver2.c</Filename>
+          <Filename>.\pwm.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\Template\driver2.c\706</Expression>
+          <Expression></Expression>
         </Bp>
         <Bp>
           <Number>4</Number>
           <Type>0</Type>
-          <LineNumber>733</LineNumber>
+          <LineNumber>274</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134246050</Address>
+          <Address>134219200</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>1</BreakIfRCount>
-          <Filename>C:\Users\Administrator\Desktop\鑺傜偣鏉跨▼搴?penguin robot\Project\driver2.c</Filename>
+          <Filename>..\HARDWAVE\CAN\can.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\Template\driver2.c\733</Expression>
+          <Expression></Expression>
+        </Bp>
+        <Bp>
+          <Number>5</Number>
+          <Type>0</Type>
+          <LineNumber>737</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134246350</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>.\driver2.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression></Expression>
+        </Bp>
+        <Bp>
+          <Number>6</Number>
+          <Type>0</Type>
+          <LineNumber>709</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134246236</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>.\driver2.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression></Expression>
+        </Bp>
+        <Bp>
+          <Number>7</Number>
+          <Type>0</Type>
+          <LineNumber>651</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134245992</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>.\driver2.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression></Expression>
         </Bp>
       </Breakpoint>
       <WatchWindow1>
@@ -355,6 +403,11 @@
           <WinNumber>1</WinNumber>
           <ItemText>LEFT_Hip</ItemText>
         </Ww>
+        <Ww>
+          <count>19</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>PWMVAL</ItemText>
+        </Ww>
       </WatchWindow1>
       <WatchWindow2>
         <Ww>
@@ -412,6 +465,12 @@
       </DebugFlag>
       <LintExecutable></LintExecutable>
       <LintConfigFile></LintConfigFile>
+      <SystemViewers>
+        <Entry>
+          <Name>System Viewer\TIM1</Name>
+          <WinId>35905</WinId>
+        </Entry>
+      </SystemViewers>
       <DebugDescription>
         <Enable>1</Enable>
         <EnableLog>0</EnableLog>
@@ -780,7 +839,7 @@
       <GroupNumber>4</GroupNumber>
       <FileNumber>26</FileNumber>
       <FileType>1</FileType>
-      <tvExp>0</tvExp>
+      <tvExp>1</tvExp>
       <Focus>1</Focus>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>

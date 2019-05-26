@@ -241,11 +241,10 @@ unsigned char CAN_BLDC_state_get(unsigned char Number)
 * Description    : Driver communication
 * Number         : Driver number 
 * RW             : 0 is Read, 1 is Write
-* obj            : obj code   lenth is 24, see the doc of driver
-* setValue       : max 32
-* returnDate     : when is reading
+* obj            : obj code   lenth is 24, see the pdf of driver
+* setValue       : max 32bits
 *******************************************************************************/		
-void CAN_BLDC(unsigned char Number, int RW, long obj, long setValue, char* returnDate)
+void CAN_BLDC(unsigned char Number, int RW, long obj, long setValue)
 {
 		CanTxMsg tx_message;
 		unsigned short can_id = 0x600;
@@ -649,6 +648,8 @@ int init_VelocityMod(unsigned char Number, long acceleration, long deceleration)
 			{
 					if(LEFT_Hip.init_flag == 0)
 					{
+						CAN_BLDC(Number, 1, 0x60fb01, 0x0);
+						//CAN_BLDC(Number, 1, 0x60f902, 0x14);
 						CAN_BLDC_accelerationSet(Number, acceleration);           //set acceleration
 						CAN_BLDC_decelerationSet(Number, deceleration);           //set deceleration
 						CAN_BLDC_ResetMod(Number, BLDC_Velocity1_Mode);           //set Velocity-Mode
@@ -660,7 +661,7 @@ int init_VelocityMod(unsigned char Number, long acceleration, long deceleration)
 						else if (LEFT_Hip.set_state == 0x01)
 						{	
 							CAN_BLDC_Control(Number, BLDC_ReControlWord_On);
-						}
+						} 
 						else if (LEFT_Hip.set_state == 0x02)
 						{	
 							CAN_BLDC_Control(Number, BLDC_ControlWord_AlarmClean);    //Let the motor connect to power
@@ -676,6 +677,7 @@ int init_VelocityMod(unsigned char Number, long acceleration, long deceleration)
 			{
 					if(LEFT_Knee.init_flag == 0)
 					{
+						CAN_BLDC(Number, 1, 0x60fb01, 0x0);
 						CAN_BLDC_accelerationSet(Number, acceleration);           //set acceleration
 						CAN_BLDC_decelerationSet(Number, deceleration);           //set deceleration
 						CAN_BLDC_ResetMod(Number, BLDC_Velocity1_Mode);           //set Velocity-Mode
@@ -703,6 +705,7 @@ int init_VelocityMod(unsigned char Number, long acceleration, long deceleration)
 			{
 					if(RIGHT_Hip.init_flag == 0)
 					{
+						CAN_BLDC(Number, 1, 0x60fb01, 0x0);
 						CAN_BLDC_accelerationSet(Number, acceleration);           //set acceleration
 						CAN_BLDC_decelerationSet(Number, deceleration);           //set deceleration
 						CAN_BLDC_ResetMod(Number, BLDC_Velocity1_Mode);           //set Velocity-Mode
@@ -730,6 +733,7 @@ int init_VelocityMod(unsigned char Number, long acceleration, long deceleration)
 			{
 					if(RIGHT_Knee.init_flag == 0)
 					{
+						CAN_BLDC(Number, 1, 0x60fb01, 0x0);
 						CAN_BLDC_accelerationSet(Number, acceleration);           //set acceleration
 						CAN_BLDC_decelerationSet(Number, deceleration);           //set deceleration
 						CAN_BLDC_ResetMod(Number, BLDC_Velocity1_Mode);           //set Velocity-Mode

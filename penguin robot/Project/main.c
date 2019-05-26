@@ -103,7 +103,7 @@ int main(void)
 	delay_ms(500);
 	*/
 	TIM3_PWM_Init(arr1,psc1);//pwm频率：72000000/(psc+1)=0.5M,  0.5M/(arr+1)=50HZ
-	TIM1_PWM_Init(arr2,psc2);
+	TIM1_PWM_Init(arr1,psc1);
 	
 	OSInit(&err);				//初始化UCOSIII
 	OS_CRITICAL_ENTER();//进入临界区

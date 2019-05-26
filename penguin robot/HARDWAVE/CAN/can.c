@@ -271,9 +271,10 @@ void CAN1_RX0_IRQHandler(void)
 			nodeStatus = 1;
 			memcpy(PWMVAL,RxMessage.Data,8);
 		}
-		else if(msgId == MII_MSG_COMMON_6)        
+		else if(msgId == MII_MSG_COMMON_6)     //4e   750=0x2ee   300 =0x12c
 		{
 			nodeStatus = 1;	
+			memcpy(&PWMVAL[4], RxMessage.Data, 2);
 		}
 		else if(msgId == MII_MSG_COMMON_7)
 		{
